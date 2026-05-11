@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Mr. Dim Sum | Tukwila, WA</title>
+<meta name="description" content="Contact Mr. Dim Sum for reservations, private dining, or questions. Located at Westfield Southcenter Mall, Tukwila WA. Open Monday–Saturday 10am–9pm, Sunday 10am–8pm.">
+<meta property="og:title" content="Contact Us — Mr. Dim Sum | Tukwila, WA">
+<meta property="og:description" content="Get in touch with Mr. Dim Sum at Westfield Southcenter Mall. Email, hours, directions, and more.">
+<meta property="og:image" content="pictures/dimsumpshoped.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Gowun+Batang:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Mr. Dim Sum",
+    "url": "https://www.mrdimsumusa.com/contact",
+    "mainEntity": {
+      "@type": "Restaurant",
+      "name": "Mr. Dim Sum",
+      "servesCuisine": "Cantonese",
+      "priceRange": "$$",
+      "email": "info@mrdimsumusa.com",
+      "url": "https://www.mrdimsumusa.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "973 Southcenter Mall",
+        "addressLocality": "Tukwila",
+        "addressRegion": "WA",
+        "postalCode": "98188",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.4595,
+        "longitude": -122.2561
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ]
+    }
+  }
+]
+</script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red: #C41E24;
+  --red-dark: #9E181D;
+  --gold: #d5b686;
+  --gold-dark: #b89b6a;
+  --gold-light: #F5E6C4;
+  --warm-bg: #FFFCF3;
+  --warm-bg-alt: #FFF8E8;
+  --charcoal: #1A1A1A;
+  --brown: #3D2B1F;
+  --brown-light: #5C4033;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-200: #E5E7EB;
+  --white: #FFFFFF;
+  --font-display: 'Italiana', serif;
+  --font-body: 'Gowun Batang', Georgia, serif;
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+  --nav-height: 76px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::selection { background: var(--gold); color: var(--brown); }
+::-moz-selection { background: var(--gold); color: var(--brown); }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--warm-bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* REVEAL ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,252,243,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  animation: navFadeIn 0.8s ease both;
+}
+
+.nav__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--nav-height);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nav__links-left,
+.nav__links-right {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+.nav__links-left { justify-content: flex-end; }
+.nav__links-right { justify-content: flex-start; }
+
+.nav__links-left a,
+.nav__links-right a {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--brown);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s, opacity 0.3s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav__links-left a::after,
+.nav__links-right a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.4s var(--ease-out-expo);
+}
+.nav__links-left a:hover::after,
+.nav__links-right a:hover::after {
+  width: 100%;
+}
+.nav__links-left a:hover,
+.nav__links-right a:hover { opacity: 0.7; }
+
+/* Active nav link */
+.nav__links-left a.is-active,
+.nav__links-right a.is-active {
+  color: var(--brown);
+}
+.nav__links-left a.is-active::after,
+.nav__links-right a.is-active::after {
+  width: 100%;
+}
+
+.nav__logo {
+  justify-self: center;
+  padding: 0 28px;
+}
+.nav__logo-img {
+  height: 38px;
+  width: auto;
+}
+
+/* HAMBURGER */
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  justify-self: end;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav__hamburger-lines {
+  width: 22px;
+  height: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav__hamburger-lines span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.4s var(--ease-out-expo), opacity 0.3s ease;
+  transform-origin: center;
+}
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(2) { opacity: 0; }
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* MOBILE MENU */
+.nav__mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,26,26,0.6);
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.nav__mobile-overlay.is-open { display: block; opacity: 1; }
+
+.nav__mobile-menu {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: var(--warm-bg);
+  z-index: 99;
+  padding: 100px 40px 40px;
+  transform: translateX(100%);
+  transition: transform 0.5s var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+  overflow-y: auto;
+}
+.nav__mobile-menu.is-open { transform: translateX(0); }
+.nav__mobile-menu a {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--brown);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  transition: color 0.3s, padding-left 0.3s;
+  min-height: 44px;
+}
+.nav__mobile-menu a:hover, .nav__mobile-menu a:active {
+  color: var(--red);
+  padding-left: 12px;
+}
+.nav__mobile-menu a.is-active {
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .nav__inner {
+    grid-template-columns: 1fr auto auto;
+    height: 64px;
+  }
+  .nav__links-left, .nav__links-right { display: none; }
+  .nav__logo { justify-self: start; padding: 0; }
+  .nav__hamburger { display: flex; }
+  .nav__logo-img { height: 32px; }
+}
+
+/* BTN */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 16px 40px;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.4s var(--ease-out-expo);
+  min-height: 44px;
+  position: relative;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--brown);
+  font-weight: 700;
+}
+.btn--gold:hover {
+  background: var(--gold-dark);
+  box-shadow: 0 4px 20px rgba(213,182,134,0.35);
+  transform: translateY(-2px);
+}
+
+/* SECTION SHARED */
+.section { padding: 88px 0; }
+.section--alt { background: var(--warm-bg-alt); }
+
+.section__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 52px;
+}
+
+.section__label {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 12px;
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  color: var(--brown);
+  letter-spacing: 0.02em;
+}
+
+.section__desc {
+  font-family: var(--font-body);
+  color: var(--gray-500);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* DECORATIVE DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 20px;
+  width: 120px;
+}
+.divider__line {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+}
+.divider__diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* HERO BANNER */
+.hero-banner {
+  background: var(--brown);
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero-banner .section__label {
+  color: var(--gold);
+}
+.hero-banner .divider__line {
+  background: var(--gold);
+}
+.hero-banner .divider__diamond {
+  background: var(--gold);
+}
+.hero-banner h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+  animation: fadeUp 1s ease 0.2s both;
+}
+.hero-banner__sub {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  animation: fadeUp 1s ease 0.4s both;
+}
+
+/* QUICK INFO BAR */
+.quick-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+  border: 1px solid rgba(213,182,134,0.2);
+  margin-top: -48px;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+.quick-info__item {
+  padding: 28px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(213,182,134,0.15);
+  transition: background 0.3s;
+}
+.quick-info__item:last-child { border-right: none; }
+.quick-info__item:hover { background: rgba(213,182,134,0.06); }
+.quick-info__icon {
+  width: 40px; height: 40px;
+  margin: 0 auto 12px;
+  background: rgba(213,182,134,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quick-info__icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--gold-dark);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.quick-info__label {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.quick-info__value {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--brown);
+  line-height: 1.6;
+}
+.quick-info__value a {
+  color: var(--red);
+  transition: color 0.2s;
+}
+.quick-info__value a:hover { color: var(--red-dark); text-decoration: underline; }
+.quick-info__value address {
+  font-style: normal;
+}
+
+/* CONTACT FORM + MAP LAYOUT */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* CONTACT FORM CARD */
+.contact-form-card {
+  background: var(--white);
+  border: 1px solid rgba(213,182,134,0.3);
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--charcoal);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(213,182,134,0.15);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray-500);
+  opacity: 0.7;
+}
+.form-group textarea {
+  resize: vertical;
+}
+.contact-form-card .btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+/* MAP EMBED INSIDE LAYOUT */
+.contact-map {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--gray-200);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  aspect-ratio: auto;
+}
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  border: 0;
+}
+.contact-map__caption {
+  padding: 16px 0 0;
+  text-align: center;
+}
+.contact-map__caption a {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--red);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.contact-map__caption a:hover { color: var(--red-dark); text-decoration: underline; }
+
+/* FAQ SECTION */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--gray-300);
+}
+.faq-item:first-child {
+  border-top: 1px solid var(--gray-300);
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brown);
+  line-height: 1.5;
+  gap: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+.faq-question:hover {
+  color: var(--red);
+}
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke: var(--brown-light);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.35s ease;
+}
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-answer__inner {
+  padding: 0 0 24px;
+  font-family: var(--font-body);
+  color: var(--brown-light);
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.7);
+  padding: 64px 0 32px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer__brand-logo {
+  height: 32px;
+  width: auto;
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+}
+.footer__brand p {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  max-width: 280px;
+}
+
+.footer h4 {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 10px; }
+.footer a {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+  position: relative;
+}
+.footer a:hover { color: var(--white); }
+
+.footer__grid a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.footer__grid a:hover::after { width: 100%; }
+
+.footer address {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+}
+
+.footer__socials { display: flex; gap: 16px; }
+.footer__socials a {
+  display: flex;
+  padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.footer__socials a:hover { transform: translateY(-2px); }
+.footer__socials a::after { display: none; }
+.footer__socials svg { width: 20px; height: 20px; fill: rgba(255,255,255,0.5); transition: fill 0.2s; }
+.footer__socials a:hover svg { fill: var(--white); }
+
+@media (max-width: 768px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+  .footer__socials { justify-content: center; }
+}
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--brown);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, background 0.2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  -webkit-tap-highlight-color: transparent;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover { background: var(--red); }
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .section__header { margin-bottom: 40px; }
+  .section__title { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+  .section__desc { font-size: 1rem; }
+  .quick-info { grid-template-columns: 1fr 1fr; margin-top: -32px; }
+  .quick-info__item:nth-child(2) { border-right: none; }
+  .quick-info__item:nth-child(1),
+  .quick-info__item:nth-child(2) { border-bottom: 1px solid rgba(213,182,134,0.15); }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-map iframe { min-height: 300px; }
+  .hero-banner { padding: 60px 20px 80px; }
+  .back-to-top {
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-info { grid-template-columns: 1fr; border-radius: 12px; }
+  .quick-info__item { border-right: none; border-bottom: 1px solid rgba(213,182,134,0.15); }
+  .quick-info__item:last-child { border-bottom: none; }
+  .contact-form-card { padding: 24px 20px; }
+}
+
+/* UTILITY */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <ul class="nav__links-left">
+      <li><a href="mr-dimsum.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="mr-dimsum.html" class="nav__logo" aria-label="Mr. Dim Sum — Home">
+      <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="nav__logo-img">
+    </a>
+    <ul class="nav__links-right">
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="contact.html" class="is-active">Contact</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
+      <div class="nav__hamburger-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+<div class="nav__mobile-menu" id="mobileMenu">
+  <a href="mr-dimsum.html" onclick="closeMenu()">Home</a>
+  <a href="menu.html" onclick="closeMenu()">Menu</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="reservations.html" onclick="closeMenu()">Reservations</a>
+  <a href="contact.html" class="is-active" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO BANNER -->
+<section class="hero-banner">
+  <p class="section__label" style="animation: fadeUp 1s ease both;">CONTACT</p>
+  <div class="divider" style="animation: fadeUp 1s ease 0.1s both;"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
+  <h1>Get in Touch</h1>
+  <p class="hero-banner__sub">Questions, private dining, or just saying hi — we'd love to hear from you</p>
+</section>
+
+<!-- QUICK INFO BAR -->
+<div class="container">
+  <div class="quick-info reveal">
+    <div class="quick-info__item">
+      <div class="quick-info__icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="quick-info__label">Location</div>
+      <div class="quick-info__value"><address>973 Southcenter Mall<br>Tukwila, WA 98188</address></div>
+    </div>
+    <div class="quick-info__item">
+      <div class="quick-info__icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="quick-info__label">Hours</div>
+      <div class="quick-info__value">Mon&ndash;Sat: 10am&ndash;9pm<br>Sun: 10am&ndash;8pm</div>
+    </div>
+    <div class="quick-info__item">
+      <div class="quick-info__icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+      </div>
+      <div class="quick-info__label">Email</div>
+      <div class="quick-info__value"><a href="mailto:info@mrdimsumusa.com">info@mrdimsumusa.com</a></div>
+    </div>
+    <div class="quick-info__item">
+      <div class="quick-info__icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="var(--gold-dark)" stroke="none"/></svg>
+      </div>
+      <div class="quick-info__label">Social</div>
+      <div class="quick-info__value"><a href="https://instagram.com/mrdimsumusa" target="_blank" rel="noopener">@mrdimsumusa</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT FORM + MAP -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-layout">
+      <!-- Left: Contact Form -->
+      <div class="reveal-left">
+        <div class="contact-form-card">
+          <h2 style="font-family:var(--font-display);font-size:1.5rem;color:var(--brown);margin-bottom:6px;letter-spacing:0.02em;">Send us a message</h2>
+          <p style="font-family:var(--font-body);color:var(--gray-500);font-size:0.9375rem;margin-bottom:28px;line-height:1.7;">Private dining, catering, questions — we'll get back to you within 24 hours.</p>
+          <form action="mailto:info@mrdimsumusa.com" method="POST" enctype="text/plain">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" required placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" required placeholder="your@email.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" placeholder="What is this about?">
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" required placeholder="Tell us what's on your mind..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--gold">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right: Map -->
+      <div class="reveal-right">
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.5!2d-122.2561!3d47.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDI3JzM0LjIiTiAxMjLCsDE1JzIxLjgiVw!5e0!3m2!1sen!2sus!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map showing Mr. Dim Sum location at Westfield Southcenter Mall, Tukwila WA">
+          </iframe>
+        </div>
+        <div class="contact-map__caption">
+          <a href="https://maps.google.com/?q=973+Southcenter+Mall+Tukwila+WA+98188" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <div class="section__header reveal">
+      <p class="section__label">FAQ</p>
+      <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
+      <h2 class="section__title">Common Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do I need a reservation?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer__inner">Walk-ins are welcome for parties of 8 or fewer. For groups of 8&ndash;16 guests, we recommend reserving ahead.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" aria-expanded="false">
+          <span>What are your hours?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer__inner">We're open Monday&ndash;Saturday 10:00 AM&ndash;9:00 PM and Sunday 10:00 AM&ndash;8:00 PM.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" aria-expanded="false">
+          <span>Where are you located?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer__inner">We're inside Westfield Southcenter Mall at 973 Southcenter Mall, Tukwila, WA 98188. Free parking is available throughout the mall.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do you offer private dining?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer__inner">Yes! We host private parties Monday&ndash;Thursday after 2:00 PM (except holidays). Contact us for details and minimum spending requirements.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is your food made fresh?</span>
+          <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p class="faq-answer__inner">Absolutely. Every dumpling is folded by hand and every broth is simmered from scratch, daily.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="footer__brand-logo">
+        <p>More than dim sum — it's a way of life. Handmade Cantonese dim sum served all day at Westfield Southcenter Mall.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="mr-dimsum.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li><a href="#contact">Mon&ndash;Sat: 10am&ndash;9pm</a></li>
+          <li><a href="#contact">Sunday: 10am&ndash;8pm</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Contact</h4>
+        <ul>
+          <li><a href="mailto:info@mrdimsumusa.com">info@mrdimsumusa.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <address>
+          973 Southcenter Mall<br>
+          Tukwila, WA 98188
+        </address>
+        <p style="margin-top:12px;font-size:0.875rem"><a href="https://maps.google.com/?q=973+Southcenter+Mall+Tukwila+WA+98188" target="_blank" rel="noopener">Get Directions</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Mr. Dim Sum. All rights reserved.</span>
+      <div class="footer__socials">
+        <a href="https://instagram.com/mrdimsumusa" target="_blank" rel="noopener" aria-label="Follow Mr. Dim Sum on Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="mailto:info@mrdimsumusa.com" aria-label="Email Mr. Dim Sum">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+// Mobile menu
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+  const btn = document.querySelector('.nav__hamburger');
+  const isOpen = menu.classList.contains('is-open');
+  if (isOpen) {
+    closeMenu();
+  } else {
+    menu.classList.add('is-open');
+    overlay.classList.add('is-open');
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Close menu');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+  const btn = document.querySelector('.nav__hamburger');
+  menu.classList.remove('is-open');
+  overlay.classList.remove('is-open');
+  btn.classList.remove('is-active');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Open menu');
+  document.body.style.overflow = '';
+}
+
+// Escape key closes menu
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMenu();
+});
+
+// Scroll-triggered reveal animations with fallback
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0,
+    rootMargin: '0px 0px 80px 0px'
+  });
+  revealEls.forEach(el => observer.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('is-visible'));
+}
+
+// Scroll fallback
+function revealFallback() {
+  revealEls.forEach(el => {
+    if (!el.classList.contains('is-visible')) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 80) {
+        el.classList.add('is-visible');
+      }
+    }
+  });
+}
+window.addEventListener('scroll', revealFallback, { passive: true });
+revealFallback();
+
+// Back to top button
+const backToTopBtn = document.getElementById('backToTop');
+let ticking = false;
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add('is-visible');
+      } else {
+        backToTopBtn.classList.remove('is-visible');
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const isOpen = item.classList.contains('is-open');
+
+    // Close all others
+    document.querySelectorAll('.faq-item.is-open').forEach(openItem => {
+      if (openItem !== item) {
+        openItem.classList.remove('is-open');
+        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        openItem.querySelector('.faq-answer').style.maxHeight = null;
+      }
+    });
+
+    // Toggle current
+    if (isOpen) {
+      item.classList.remove('is-open');
+      this.setAttribute('aria-expanded', 'false');
+      answer.style.maxHeight = null;
+    } else {
+      item.classList.add('is-open');
+      this.setAttribute('aria-expanded', 'true');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Mr. Dim Sum | Handmade Cantonese Dim Sum in Tukwila, WA</title>
+<meta name="description" content="Learn about Mr. Dim Sum's values, story, and commitment to authentic handmade Cantonese dim sum at Westfield Southcenter Mall in Tukwila, WA.">
+<meta property="og:title" content="About Us — Mr. Dim Sum | Handmade Cantonese Dim Sum">
+<meta property="og:description" content="Learn about Mr. Dim Sum's commitment to authentic handmade Cantonese dim sum at Westfield Southcenter Mall in Tukwila, WA.">
+<meta property="og:image" content="pictures/Photo_TableSpread_MrDimSum_2026-03-11_v03.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Gowun+Batang:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Mr. Dim Sum",
+  "description": "Learn about Mr. Dim Sum's values, story, and commitment to authentic handmade Cantonese dim sum.",
+  "mainEntity": {
+    "@type": "Restaurant",
+    "name": "Mr. Dim Sum",
+    "servesCuisine": "Cantonese",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "973 Southcenter Mall",
+      "addressLocality": "Tukwila",
+      "addressRegion": "WA",
+      "postalCode": "98188",
+      "addressCountry": "US"
+    },
+    "url": "https://www.mrdimsumusa.com"
+  }
+}
+</script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red: #C41E24;
+  --red-dark: #9E181D;
+  --gold: #d5b686;
+  --gold-dark: #b89b6a;
+  --gold-light: #F5E6C4;
+  --warm-bg: #FFFCF3;
+  --warm-bg-alt: #FFF8E8;
+  --charcoal: #1A1A1A;
+  --brown: #3D2B1F;
+  --brown-light: #5C4033;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-200: #E5E7EB;
+  --white: #FFFFFF;
+  --font-display: 'Italiana', serif;
+  --font-body: 'Gowun Batang', Georgia, serif;
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+  --nav-height: 76px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--brown);
+}
+::-moz-selection {
+  background: var(--gold);
+  color: var(--brown);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--warm-bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* REVEAL ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,252,243,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  animation: navFadeIn 0.8s ease both;
+}
+
+.nav__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--nav-height);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nav__links-left,
+.nav__links-right {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+.nav__links-left { justify-content: flex-end; }
+.nav__links-right { justify-content: flex-start; }
+
+.nav__links-left a,
+.nav__links-right a {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--brown);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s, opacity 0.3s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav__links-left a::after,
+.nav__links-right a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.4s var(--ease-out-expo);
+}
+.nav__links-left a:hover::after,
+.nav__links-right a:hover::after {
+  width: 100%;
+}
+.nav__links-left a:hover,
+.nav__links-right a:hover { opacity: 0.7; }
+
+/* Active nav link */
+.nav__links-left a.is-active,
+.nav__links-right a.is-active {
+  color: var(--brown);
+}
+.nav__links-left a.is-active::after,
+.nav__links-right a.is-active::after {
+  width: 100%;
+}
+
+.nav__logo {
+  justify-self: center;
+  padding: 0 28px;
+}
+.nav__logo-img {
+  height: 38px;
+  width: auto;
+}
+
+/* HAMBURGER */
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  justify-self: end;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav__hamburger-lines {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav__hamburger-lines span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(2) {
+  opacity: 0;
+}
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* MOBILE MENU */
+.nav__mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,26,26,0.5);
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.nav__mobile-overlay.is-open {
+  display: block;
+  opacity: 1;
+}
+
+.nav__mobile-menu {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: var(--warm-bg);
+  z-index: 99;
+  padding: 100px 40px 40px;
+  transform: translateX(100%);
+  transition: transform 0.5s var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+  overflow-y: auto;
+}
+.nav__mobile-menu.is-open { transform: translateX(0); }
+.nav__mobile-menu a {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--brown);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  transition: color 0.3s, padding-left 0.3s;
+  min-height: 44px;
+}
+.nav__mobile-menu a:hover, .nav__mobile-menu a:active {
+  color: var(--red);
+  padding-left: 12px;
+}
+.nav__mobile-menu a.is-active {
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .nav__inner {
+    grid-template-columns: 1fr auto auto;
+    height: 64px;
+  }
+  .nav__links-left, .nav__links-right { display: none; }
+  .nav__logo { justify-self: start; padding: 0; }
+  .nav__hamburger { display: flex; }
+  .nav__logo-img { height: 32px; }
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 16px 40px;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.4s var(--ease-out-expo);
+  min-height: 44px;
+  position: relative;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--brown);
+  font-weight: 700;
+}
+.btn--gold:hover {
+  background: var(--gold-dark);
+  box-shadow: 0 4px 20px rgba(213,182,134,0.35);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--brown);
+  font-weight: 700;
+  border: 2px solid var(--gold);
+}
+.btn--outline:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-dark);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--gold);
+  padding: 0;
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+.btn--ghost:hover { color: var(--white); }
+.btn--ghost svg { width: 18px; height: 18px; transition: transform 0.3s; }
+.btn--ghost:hover svg { transform: translateX(6px); }
+
+/* SECTION SHARED */
+.section { padding: 88px 0; }
+.section--alt { background: var(--warm-bg-alt); }
+
+.section__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 52px;
+}
+
+.section__label {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 12px;
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  color: var(--brown);
+  letter-spacing: 0.02em;
+}
+
+.section__desc {
+  font-family: var(--font-body);
+  color: var(--gray-500);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* DECORATIVE DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 20px;
+  width: 120px;
+}
+.divider__line {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+}
+.divider__diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* HERO BANNER — shorter, no parallax */
+.about-hero {
+  background: var(--brown);
+  padding: 80px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.about-hero__content {
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeUp 1.2s ease both;
+}
+
+.about-hero__label {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  animation: fadeIn 1.5s ease 0.3s both;
+}
+
+.about-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+  animation: fadeUp 1.2s ease 0.4s both;
+}
+
+.about-hero__sub {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+  animation: fadeUp 1.2s ease 0.6s both;
+}
+
+/* VALUES SECTION */
+.values__intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 52px;
+  font-family: var(--font-body);
+  color: var(--gray-500);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.value-card {
+  background: var(--white);
+  border: 1px solid rgba(213,182,134,0.3);
+  border-radius: 12px;
+  padding: 40px 28px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.value-card__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.value-card__icon svg {
+  width: 48px;
+  height: 48px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.value-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--brown);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.value-card p {
+  font-family: var(--font-body);
+  color: var(--gray-500);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .values-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* PHOTO BAND */
+.photo-band {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.photo-band img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: -10%;
+}
+
+/* STORY */
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.story__img {
+  position: relative;
+  overflow: hidden;
+}
+.story__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.story:hover .story__img img { transform: scale(1.03); }
+
+.story__text {
+  background: var(--brown);
+  color: var(--white);
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story__text .section__label {
+  color: var(--gold);
+}
+
+.story__text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  margin-bottom: 24px;
+  line-height: 1.2;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.story__text p {
+  font-family: var(--font-body);
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 16px;
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+.story__text .highlight {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .story { grid-template-columns: 1fr; }
+  .story__img { min-height: 280px; }
+  .story__text { padding: 36px 24px; }
+}
+
+/* CULTURE — stats section */
+.culture {
+  background: var(--brown);
+  padding: 88px 0;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.culture__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+.culture__header .section__label {
+  color: var(--gold);
+}
+.culture__header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.culture__desc {
+  font-family: var(--font-body);
+  color: rgba(255,255,255,0.75);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.culture__cta {
+  margin-top: 28px;
+}
+
+.culture__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(213,182,134,0.15);
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(213,182,134,0.35);
+  background: rgba(255,255,255,0.09);
+}
+
+.stat-card__number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+.stat-card__number .stat-suffix {
+  font-size: 0.7em;
+}
+
+.stat-card__label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.stat-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .culture { padding: 64px 0; }
+  .culture__header { margin-bottom: 40px; }
+  .culture__stats { grid-template-columns: 1fr; gap: 20px; }
+  .stat-card { padding: 32px 24px; }
+}
+
+/* CTA SECTION */
+.cta-section {
+  padding: 88px 0;
+  text-align: center;
+  background: var(--warm-bg-alt);
+}
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  color: var(--brown);
+  margin-bottom: 32px;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.cta-section__buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.7);
+  padding: 64px 0 32px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer__brand-logo {
+  height: 32px;
+  width: auto;
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+}
+.footer__brand p {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  max-width: 280px;
+}
+
+.footer h4 {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 10px; }
+.footer a {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+  position: relative;
+}
+.footer a:hover { color: var(--white); }
+
+.footer__grid a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.footer__grid a:hover::after {
+  width: 100%;
+}
+
+.footer address {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+}
+
+.footer__socials { display: flex; gap: 16px; }
+.footer__socials a {
+  display: flex;
+  padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.footer__socials a:hover { transform: translateY(-2px); }
+.footer__socials a::after { display: none; }
+.footer__socials svg { width: 20px; height: 20px; fill: rgba(255,255,255,0.5); transition: fill 0.2s; }
+.footer__socials a:hover svg { fill: var(--white); }
+
+@media (max-width: 768px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+  .footer__socials { justify-content: center; }
+}
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--brown);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, background 0.2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  -webkit-tap-highlight-color: transparent;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--red);
+}
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* MOBILE-SPECIFIC */
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .about-hero { padding: 60px 0; }
+  .about-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  .about-hero__sub {
+    font-size: 1.05rem;
+  }
+  .section__header {
+    margin-bottom: 40px;
+  }
+  .section__title {
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  }
+  .section__desc {
+    font-size: 1rem;
+  }
+  .cta-section { padding: 64px 0; }
+  .back-to-top {
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: 20px;
+  }
+}
+
+/* UTILITY */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <ul class="nav__links-left">
+      <li><a href="mr-dimsum.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html" class="is-active">About</a></li>
+    </ul>
+    <a href="mr-dimsum.html" class="nav__logo" aria-label="Mr. Dim Sum — Home">
+      <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="nav__logo-img">
+    </a>
+    <ul class="nav__links-right">
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
+      <div class="nav__hamburger-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+<div class="nav__mobile-menu" id="mobileMenu">
+  <a href="mr-dimsum.html" onclick="closeMenu()">Home</a>
+  <a href="menu.html" onclick="closeMenu()">Menu</a>
+  <a href="about.html" class="is-active" onclick="closeMenu()">About</a>
+  <a href="reservations.html" onclick="closeMenu()">Reservations</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO BANNER -->
+<section class="about-hero">
+  <div class="container">
+    <div class="about-hero__content">
+      <p class="about-hero__label">About Us</p>
+      <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
+      <h1>Our Story</h1>
+      <p class="about-hero__sub">More than dim sum — it's a way of life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section" id="values">
+  <div class="container">
+    <div class="section__header reveal">
+      <p class="section__label">Our Values</p>
+      <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
+      <h2 class="section__title">What we stand for</h2>
+    </div>
+    <p class="values__intro reveal">At our core, we value authenticity, efficiency, and community. We're proud to be part of the diverse food scene at Southcenter Mall and strive to provide a welcoming, satisfying experience to everyone who walks through our doors.</p>
+    <div class="values-grid">
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 48 48">
+            <path d="M24 6c-8 0-16 4-16 14 0 6 4 10 8 12l2 8h12l2-8c4-2 8-6 8-12C40 10 32 6 24 6z"/>
+            <path d="M18 40h12M20 44h8"/>
+            <circle cx="24" cy="18" r="4"/>
+          </svg>
+        </div>
+        <h3>Authenticity</h3>
+        <p>Every dumpling is handmade. Every broth is simmered from scratch. We keep it traditional because that's what makes it good.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="18"/>
+            <polyline points="24 12 24 24 32 28"/>
+          </svg>
+        </div>
+        <h3>Efficiency</h3>
+        <p>Fast, flavorful food that respects your time. From our kitchen to your table, no unnecessary waits.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-3">
+        <div class="value-card__icon">
+          <svg viewBox="0 0 48 48">
+            <path d="M17 20a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/>
+            <path d="M31 20a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/>
+            <path d="M6 40c0-8 5-14 11-14h2"/>
+            <path d="M42 40c0-8-5-14-11-14h-2"/>
+            <path d="M24 34l-4 4 4 4 4-4-4-4z"/>
+          </svg>
+        </div>
+        <h3>Community</h3>
+        <p>We're proud to be part of Southcenter Mall's diverse food scene, serving everyone who walks through our doors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BAND -->
+<div class="photo-band">
+  <img src="pictures/MrDimSum_Photo_InteriorSeating_2025-05-21_v01.jpg" alt="Interior of Mr. Dim Sum restaurant with newspaper artwork on the walls and comfortable seating" loading="lazy">
+</div>
+
+<!-- STORY -->
+<section class="section section--alt" id="story">
+  <div class="container">
+    <div class="story">
+      <div class="story__img reveal-left">
+        <img src="pictures/drinks.png" alt="A spread of dim sum dishes including rice rolls, steamed buns, and stir fried vegetables at Mr. Dim Sum" loading="lazy">
+      </div>
+      <div class="story__text reveal-right">
+        <p class="section__label">Our Story</p>
+        <h2>Made fresh daily, the way it should be</h2>
+        <p>Mr. Dim Sum was born from a simple belief: <span class="highlight">handmade Cantonese dim sum shouldn't be saved for special occasions.</span> It's everyday food — fast, generous, and meant to be shared around a table with the people you love.</p>
+        <p>Every dumpling is folded by hand. Every broth is simmered from scratch. From our kitchen to your table, we keep it traditional because that's what makes it good.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="culture" id="culture">
+  <div class="container">
+    <div class="culture__header reveal">
+      <p class="section__label">Culture</p>
+      <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
+      <h2>A taste of tradition</h2>
+      <p class="culture__desc">From fresh, handmade dumplings to warm, fluffy buns, our food is fast, flavorful, and made with care.</p>
+      <p class="culture__desc">Whether you're grabbing a quick bite or sitting down to share with friends and family, we've got something delicious waiting for you.</p>
+      <div class="culture__cta">
+        <a href="https://www.yelp.com/reservations/mr-dim-sum-tukwila-3" target="_blank" rel="noopener" class="btn btn--gold">Reserve Now</a>
+      </div>
+    </div>
+    <div class="culture__stats">
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-card__number"><span class="counter" data-target="151">0</span></div>
+        <div class="stat-card__label">Guests</div>
+        <p class="stat-card__desc">We offer seating for up to 151 guests, whether you're looking to sit &amp; enjoy or grab a quick bite on the go, we're designed to fit your pace.</p>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-card__number"><span class="counter" data-target="100">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-card__label">Dishes</div>
+        <p class="stat-card__desc">Every dish is made fresh daily with care and attention to flavor, texture, and tradition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container reveal">
+    <h2>Ready to experience it?</h2>
+    <div class="cta-section__buttons">
+      <a href="https://www.yelp.com/reservations/mr-dim-sum-tukwila-3" target="_blank" rel="noopener" class="btn btn--gold">Reserve Now</a>
+      <a href="menu.html" class="btn btn--outline">View Our Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="footer__brand-logo">
+        <p>More than dim sum — it's a way of life. Handmade Cantonese dim sum served all day at Westfield Southcenter Mall.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="mr-dimsum.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li><a href="contact.html">Mon–Sat: 10am–9pm</a></li>
+          <li><a href="contact.html">Sunday: 10am–8pm</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Contact</h4>
+        <ul>
+          <li><a href="mailto:info@mrdimsumusa.com">info@mrdimsumusa.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <address>
+          973 Southcenter Mall<br>
+          Tukwila, WA 98188
+        </address>
+        <p style="margin-top:12px;font-size:0.875rem"><a href="https://maps.google.com/?q=973+Southcenter+Mall+Tukwila+WA+98188" target="_blank" rel="noopener">Get Directions</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Mr. Dim Sum. All rights reserved.</span>
+      <div class="footer__socials">
+        <a href="https://instagram.com/mrdimsumusa" target="_blank" rel="noopener" aria-label="Follow Mr. Dim Sum on Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="mailto:info@mrdimsumusa.com" aria-label="Email Mr. Dim Sum">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+// Mobile menu
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+  const btn = document.querySelector('.nav__hamburger');
+  const isOpen = menu.classList.contains('is-open');
+
+  if (isOpen) {
+    closeMenu();
+  } else {
+    menu.classList.add('is-open');
+    overlay.classList.add('is-open');
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Close menu');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+  const btn = document.querySelector('.nav__hamburger');
+  menu.classList.remove('is-open');
+  overlay.classList.remove('is-open');
+  btn.classList.remove('is-active');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Open menu');
+  document.body.style.overflow = '';
+}
+
+// Close menu on escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMenu();
+});
+
+// Scroll-triggered reveal animations with scroll fallback
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0,
+  rootMargin: '0px 0px 80px 0px'
+});
+
+revealEls.forEach(el => observer.observe(el));
+
+// Scroll fallback
+function revealFallback() {
+  revealEls.forEach(el => {
+    if (!el.classList.contains('is-visible')) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 80) {
+        el.classList.add('is-visible');
+      }
+    }
+  });
+}
+window.addEventListener('scroll', revealFallback, { passive: true });
+revealFallback();
+
+// Animated counter
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const duration = 2000;
+      const start = performance.now();
+
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutCubic(progress);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = target;
+        }
+      }
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.3, rootMargin: '0px 0px 20px 0px' });
+
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+// Back to top button
+const backToTopBtn = document.getElementById('backToTop');
+let ticking = false;
+
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add('is-visible');
+      } else {
+        backToTopBtn.classList.remove('is-visible');
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+</script>
+
+</body>
+</html>

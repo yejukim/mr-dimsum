@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Mr. Dim Sum | Handmade Cantonese Dim Sum in Tukwila, WA</title>
+<meta name="description" content="Full dim sum menu at Mr. Dim Sum — steamed dumplings, rice rolls, BBQ, noodles, congee, and more. Served all day at Westfield Southcenter Mall.">
+<meta property="og:title" content="Menu — Mr. Dim Sum | Handmade Cantonese Dim Sum">
+<meta property="og:description" content="Full dim sum menu — steamed dumplings, rice rolls, BBQ, noodles, congee, and more. Served all day at Westfield Southcenter Mall.">
+<meta property="og:image" content="pictures/MrDimSum_Photo_AssortedSpread_2025-06-21_v05.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Gowun+Batang:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Mr. Dim Sum Menu",
+  "description": "Handmade Cantonese dim sum served all day",
+  "mainEntity": {
+    "@type": "Restaurant",
+    "name": "Mr. Dim Sum",
+    "servesCuisine": "Cantonese",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "973 Southcenter Mall",
+      "addressLocality": "Tukwila",
+      "addressRegion": "WA",
+      "postalCode": "98188"
+    }
+  }
+}
+</script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red: #C41E24;
+  --red-dark: #9E181D;
+  --gold: #d5b686;
+  --gold-dark: #b89b6a;
+  --gold-light: #F5E6C4;
+  --warm-bg: #FFFCF3;
+  --warm-bg-alt: #FFF8E8;
+  --charcoal: #1A1A1A;
+  --brown: #3D2B1F;
+  --brown-light: #5C4033;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-200: #E5E7EB;
+  --gray-100: #F9F6F0;
+  --white: #FFFFFF;
+  --font-display: 'Italiana', serif;
+  --font-body: 'Gowun Batang', Georgia, serif;
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+  --nav-height: 76px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::selection { background: var(--gold); color: var(--brown); }
+::-moz-selection { background: var(--gold); color: var(--brown); }
+
+html { scroll-behavior: auto; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--warm-bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+a:focus-visible, button:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ANIMATIONS */
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.menu-category.reveal { opacity: 1; transform: none; }
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,252,243,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  animation: navFadeIn 0.8s ease both;
+}
+
+.nav__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--nav-height);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nav__links-left, .nav__links-right {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+.nav__links-left { justify-content: flex-end; }
+.nav__links-right { justify-content: flex-start; }
+
+.nav__links-left a, .nav__links-right a {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--brown);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s, opacity 0.3s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav__links-left a::after, .nav__links-right a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.4s var(--ease-out-expo);
+}
+.nav__links-left a:hover::after, .nav__links-right a:hover::after { width: 100%; }
+.nav__links-left a:hover, .nav__links-right a:hover { opacity: 0.7; }
+.nav__links-left a.is-active, .nav__links-right a.is-active { color: var(--brown); }
+.nav__links-left a.is-active::after, .nav__links-right a.is-active::after { width: 100%; }
+
+.nav__logo { justify-self: center; padding: 0 28px; }
+.nav__logo-img { height: 38px; width: auto; }
+
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  justify-self: end;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav__hamburger-lines {
+  width: 22px;
+  height: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav__hamburger-lines span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.4s var(--ease-out-expo), opacity 0.3s ease;
+  transform-origin: center;
+}
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(2) { opacity: 0; }
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav__mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,26,26,0.6);
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.nav__mobile-overlay.is-open { display: block; opacity: 1; }
+
+.nav__mobile-menu {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: var(--warm-bg);
+  z-index: 99;
+  padding: 100px 40px 40px;
+  transform: translateX(100%);
+  transition: transform 0.5s var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+  overflow-y: auto;
+}
+.nav__mobile-menu.is-open { transform: translateX(0); }
+.nav__mobile-menu a {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--brown);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  transition: color 0.3s, padding-left 0.3s;
+  min-height: 44px;
+}
+.nav__mobile-menu a:hover, .nav__mobile-menu a:active { color: var(--red); padding-left: 12px; }
+
+/* HERO BANNER */
+.menu-hero {
+  position: relative;
+  padding: 72px 20px;
+  text-align: center;
+  background: var(--warm-bg-alt);
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+}
+
+.menu-hero__label {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 16px;
+}
+
+.menu-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  color: var(--brown);
+  line-height: 1.15;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.menu-hero__sub {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--gray-500);
+  max-width: 460px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 20px;
+  width: 120px;
+}
+.divider__line { flex: 1; height: 1px; background: var(--gold); }
+.divider__diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+/* DIETARY LEGEND */
+.legend-bar {
+  background: rgba(255,252,243,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  padding: 12px 20px;
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 90;
+}
+
+.legend-bar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--brown-light);
+  flex-shrink: 0;
+}
+
+.legend-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.legend-icon--vegan { background: #D1FAE5; color: #065F46; }
+.legend-icon--vegetarian { background: #FEF3C7; color: #92400E; }
+.legend-icon--gf { background: #DBEAFE; color: #1E40AF; }
+.legend-icon--spicy { background: #FEE2E2; color: #991B1B; }
+.legend-icon--peanuts { background: #FDE68A; color: #78350F; }
+
+/* ============================================
+   MENU LAYOUT — Sidebar + Content
+   ============================================ */
+.menu-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+/* SIDEBAR */
+.menu-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 48px);
+  height: calc(100vh - var(--nav-height) - 48px);
+  overflow-y: auto;
+  padding: 24px 0 24px 20px;
+  border-right: 1px solid rgba(213,182,134,0.2);
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+.menu-sidebar::-webkit-scrollbar { width: 4px; }
+.menu-sidebar::-webkit-scrollbar-track { background: transparent; }
+.menu-sidebar::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+/* Search box */
+.menu-search {
+  position: relative;
+  margin-bottom: 20px;
+  padding-right: 16px;
+}
+
+.menu-search__input {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  border: 1px solid rgba(213,182,134,0.4);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.menu-search__input::placeholder {
+  color: var(--gray-500);
+  font-size: 0.8125rem;
+}
+.menu-search__input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(213,182,134,0.15);
+}
+
+.menu-search__icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--gray-500);
+  pointer-events: none;
+}
+
+.menu-search__clear {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--gray-500);
+  padding: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.2s;
+}
+.menu-search__clear:hover { color: var(--red); }
+.menu-search__clear.is-visible { display: flex; }
+
+/* Category links in sidebar */
+.sidebar-nav {
+  list-style: none;
+  padding-right: 16px;
+}
+
+.sidebar-nav__item {
+  margin-bottom: 1px;
+}
+
+.sidebar-nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+.sidebar-nav__link:hover {
+  color: var(--brown);
+  background: rgba(213,182,134,0.1);
+}
+
+.sidebar-nav__link.is-active {
+  color: var(--red);
+  background: rgba(196,30,36,0.06);
+  font-weight: 700;
+}
+
+.sidebar-nav__count {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  color: var(--gray-300);
+  min-width: 18px;
+  text-align: right;
+  transition: color 0.2s;
+}
+.sidebar-nav__link.is-active .sidebar-nav__count {
+  color: var(--red);
+  opacity: 0.6;
+}
+
+/* Search results count */
+.search-results-info {
+  display: none;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  background: rgba(213,182,134,0.08);
+  border-radius: 6px;
+}
+.search-results-info.is-visible { display: block; }
+
+/* No results message */
+.menu-no-results {
+  display: none;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--gray-500);
+}
+.menu-no-results.is-visible { display: block; }
+.menu-no-results__icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  opacity: 0.4;
+}
+.menu-no-results h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+.menu-no-results p {
+  font-size: 0.9rem;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* MENU CONTENT */
+.menu-content {
+  padding: 0 20px 80px 40px;
+  min-width: 0;
+}
+
+/* CATEGORY SECTION */
+.menu-category {
+  padding-top: 48px;
+}
+
+.menu-category__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--gold);
+}
+
+.menu-category__header h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--brown);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.menu-category__count {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 2px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* MENU ITEM */
+.menu-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(213,182,134,0.12);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+.menu-item:hover { background: rgba(213,182,134,0.06); }
+.menu-item:last-child { border-bottom: none; }
+
+/* Search highlight */
+.menu-item.is-highlighted {
+  background: rgba(213,182,134,0.12);
+}
+
+.menu-item__name {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--charcoal);
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.menu-item__desc {
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  font-weight: 400;
+}
+
+.menu-item__tags {
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.tag {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  font-weight: 800;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.tag--vegan { background: #D1FAE5; color: #065F46; }
+.tag--vegetarian { background: #FEF3C7; color: #92400E; }
+.tag--gf { background: #DBEAFE; color: #1E40AF; }
+.tag--spicy { background: #FEE2E2; color: #991B1B; }
+.tag--peanuts { background: #FDE68A; color: #78350F; }
+
+.menu-item__dots {
+  flex: 1;
+  min-width: 20px;
+  border-bottom: 1px dotted var(--gray-300);
+  margin: 0 4px;
+  align-self: center;
+  height: 0;
+}
+
+.menu-item__price {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--red);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Hidden categories (via search filter) */
+.menu-category.is-hidden { display: none; }
+.menu-item.is-hidden { display: none; }
+
+/* RESERVE CTA */
+.menu-cta {
+  text-align: center;
+  padding: 56px 20px;
+  background: var(--warm-bg-alt);
+  margin-top: 48px;
+  border-radius: 8px;
+  border: 1px solid rgba(213,182,134,0.3);
+}
+
+.menu-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 12px;
+  color: var(--brown);
+  letter-spacing: 0.02em;
+}
+
+.menu-cta p {
+  font-family: var(--font-body);
+  color: var(--gray-500);
+  margin-bottom: 24px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 16px 40px;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.4s var(--ease-out-expo);
+  min-height: 44px;
+  position: relative;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--brown);
+  font-weight: 700;
+}
+.btn--gold:hover {
+  background: var(--gold-dark);
+  box-shadow: 0 4px 20px rgba(213,182,134,0.35);
+  transform: translateY(-2px);
+}
+
+/* MOBILE CATEGORY DROPDOWN (replaces sidebar on mobile) */
+.mobile-cat-bar {
+  display: none;
+  position: sticky;
+  top: calc(var(--nav-height) + 48px);
+  z-index: 80;
+  background: rgba(255,252,243,0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  padding: 10px 16px;
+  gap: 8px;
+}
+
+.mobile-cat-bar__search {
+  position: relative;
+  flex: 1;
+}
+.mobile-cat-bar__search-input {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  border: 1px solid rgba(213,182,134,0.4);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.mobile-cat-bar__search-input::placeholder { color: var(--gray-500); }
+.mobile-cat-bar__search-input:focus { border-color: var(--gold); }
+.mobile-cat-bar__search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--gray-500);
+  pointer-events: none;
+}
+
+.mobile-cat-bar__clear {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--gray-500);
+  padding: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-cat-bar__clear.is-visible { display: flex; }
+
+.mobile-cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--brown);
+  background: var(--white);
+  border: 1px solid rgba(213,182,134,0.4);
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.mobile-cat-btn:hover { border-color: var(--gold); }
+.mobile-cat-btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s;
+}
+.mobile-cat-btn.is-open svg { transform: rotate(180deg); }
+
+/* Mobile category dropdown panel */
+.mobile-cat-dropdown {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 95;
+}
+
+.mobile-cat-dropdown.is-open { display: block; }
+
+.mobile-cat-dropdown__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,26,26,0.4);
+}
+
+.mobile-cat-dropdown__panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--warm-bg);
+  border-radius: 16px 16px 0 0;
+  max-height: 65vh;
+  overflow-y: auto;
+  padding: 20px 0;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.mobile-cat-dropdown__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 16px;
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  margin-bottom: 8px;
+}
+.mobile-cat-dropdown__header h3 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  color: var(--brown);
+}
+.mobile-cat-dropdown__close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--gray-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.mobile-cat-dropdown__close:hover { background: rgba(213,182,134,0.1); }
+
+.mobile-cat-dropdown__list {
+  list-style: none;
+  padding: 0 12px;
+}
+.mobile-cat-dropdown__list li { margin-bottom: 1px; }
+.mobile-cat-dropdown__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--brown-light);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.mobile-cat-dropdown__link:hover { background: rgba(213,182,134,0.1); }
+.mobile-cat-dropdown__link.is-active {
+  color: var(--red);
+  background: rgba(196,30,36,0.06);
+  font-weight: 700;
+}
+.mobile-cat-dropdown__link span {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: var(--gray-300);
+}
+
+/* FOOTER */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.7);
+  padding: 64px 0 32px;
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer__brand-logo {
+  height: 32px;
+  width: auto;
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+}
+.footer__brand p {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  max-width: 280px;
+}
+
+.footer h4 {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 10px; }
+.footer a {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer a:hover { color: var(--white); }
+
+.footer address {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+}
+
+.footer__socials { display: flex; gap: 16px; }
+.footer__socials a { display: flex; }
+.footer__socials svg { width: 20px; height: 20px; fill: rgba(255,255,255,0.5); transition: fill 0.2s; }
+.footer__socials a:hover svg { fill: var(--white); }
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--brown);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, background 0.2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  -webkit-tap-highlight-color: transparent;
+}
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { background: var(--red); }
+.back-to-top svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  :root { --nav-height: 64px; }
+
+  .nav__inner {
+    grid-template-columns: 1fr auto auto;
+    height: 64px;
+  }
+  .nav__links-left, .nav__links-right { display: none; }
+  .nav__logo { justify-self: start; padding: 0; }
+  .nav__hamburger { display: flex; }
+  .nav__logo-img { height: 32px; }
+
+  .menu-hero { padding: 48px 16px; }
+
+  .legend-bar__inner {
+    gap: 12px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .legend-bar__inner::-webkit-scrollbar { display: none; }
+
+  /* Switch to single column — hide sidebar, show mobile bar */
+  .menu-layout {
+    grid-template-columns: 1fr;
+  }
+  .menu-sidebar { display: none; }
+  .mobile-cat-bar { display: flex; }
+
+  .menu-content {
+    padding: 0 16px 80px 16px;
+  }
+
+  .menu-category__header h2 { font-size: 1.25rem; }
+  .menu-item__name { white-space: normal; font-size: 0.875rem; }
+  .menu-item__price { font-size: 0.875rem; }
+  .menu-cta { padding: 40px 20px; }
+
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+  .footer__socials { justify-content: center; }
+  .back-to-top { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); right: 20px; }
+}
+
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr; gap: 28px; }
+  .menu-item__dots { display: none; }
+  .menu-item { justify-content: space-between; }
+  .menu-item__name { flex: 1; min-width: 0; padding-right: 12px; }
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .footer { padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px)); }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <ul class="nav__links-left">
+      <li><a href="mr-dimsum.html">Home</a></li>
+      <li><a href="menu.html" class="is-active">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="mr-dimsum.html" class="nav__logo" aria-label="Mr. Dim Sum — Home">
+      <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="nav__logo-img">
+    </a>
+    <ul class="nav__links-right">
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
+      <div class="nav__hamburger-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+<div class="nav__mobile-menu" id="mobileMenu">
+  <a href="mr-dimsum.html" onclick="closeMenu()">Home</a>
+  <a href="menu.html" onclick="closeMenu()">Menu</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="reservations.html" onclick="closeMenu()">Reservations</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="menu-hero">
+  <span class="menu-hero__label">Served all day</span>
+  <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
+  <h1>Our menu</h1>
+  <p class="menu-hero__sub">Same handmade dim sum from open to close. No separate lunch or dinner — just great food whenever you're hungry.</p>
+</section>
+
+<!-- DIETARY LEGEND -->
+<div class="legend-bar">
+  <div class="legend-bar__inner">
+    <span class="legend-item"><span class="legend-icon legend-icon--vegan">VG</span> Vegan</span>
+    <span class="legend-item"><span class="legend-icon legend-icon--vegetarian">V</span> Vegetarian</span>
+    <span class="legend-item"><span class="legend-icon legend-icon--gf">GF</span> Gluten-Free</span>
+    <span class="legend-item"><span class="legend-icon legend-icon--spicy">S</span> Spicy</span>
+    <span class="legend-item"><span class="legend-icon legend-icon--peanuts">P</span> Peanuts</span>
+  </div>
+</div>
+
+<!-- MOBILE CATEGORY BAR (visible on mobile only) -->
+<div class="mobile-cat-bar">
+  <div class="mobile-cat-bar__search">
+    <svg class="mobile-cat-bar__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" class="mobile-cat-bar__search-input" id="mobileSearchInput" placeholder="Search dishes..." autocomplete="off">
+    <button class="mobile-cat-bar__clear" id="mobileSearchClear" aria-label="Clear search">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <button class="mobile-cat-btn" id="mobileCatBtn" aria-label="Browse categories">
+    <span>Categories</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+</div>
+
+<!-- MOBILE CATEGORY DROPDOWN -->
+<div class="mobile-cat-dropdown" id="mobileCatDropdown">
+  <div class="mobile-cat-dropdown__overlay" onclick="closeCatDropdown()"></div>
+  <div class="mobile-cat-dropdown__panel">
+    <div class="mobile-cat-dropdown__header">
+      <h3>Jump to category</h3>
+      <button class="mobile-cat-dropdown__close" onclick="closeCatDropdown()" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-cat-dropdown__list" id="mobileCatList">
+      <li><a class="mobile-cat-dropdown__link" href="#tea" onclick="closeCatDropdown()">Tea <span>5</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#appetizers" onclick="closeCatDropdown()">Appetizers <span>9</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#soup" onclick="closeCatDropdown()">Soup <span>5</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#congee" onclick="closeCatDropdown()">Congee <span>7</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#steamed" onclick="closeCatDropdown()">Steamed <span>15</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#buns" onclick="closeCatDropdown()">Steamed Buns <span>5</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#rice-rolls" onclick="closeCatDropdown()">Rice Rolls <span>9</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#fried" onclick="closeCatDropdown()">Pan Fried & Deep Fried <span>14</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#baked" onclick="closeCatDropdown()">Baked <span>6</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#greens" onclick="closeCatDropdown()">Greens <span>10</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#bbq" onclick="closeCatDropdown()">Barbecue <span>7</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#fried-rice" onclick="closeCatDropdown()">Fried Rice <span>5</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#noodles" onclick="closeCatDropdown()">Fried Noodles <span>8</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#desserts" onclick="closeCatDropdown()">Desserts <span>8</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#drinks" onclick="closeCatDropdown()">Drinks <span>12</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#soda" onclick="closeCatDropdown()">Soda & Juice <span>11</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#mocktails" onclick="closeCatDropdown()">Mocktails <span>7</span></a></li>
+      <li><a class="mobile-cat-dropdown__link" href="#sides" onclick="closeCatDropdown()">Sides <span>4</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- MENU LAYOUT: Sidebar + Content -->
+<div class="menu-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="menu-sidebar" aria-label="Menu categories">
+    <div class="menu-search">
+      <svg class="menu-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="menu-search__input" id="searchInput" placeholder="Search dishes..." autocomplete="off">
+      <button class="menu-search__clear" id="searchClear" aria-label="Clear search">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="search-results-info" id="searchResultsInfo"></div>
+    <ul class="sidebar-nav" id="sidebarNav">
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#tea" data-cat="tea">Tea <span class="sidebar-nav__count">5</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#appetizers" data-cat="appetizers">Appetizers <span class="sidebar-nav__count">9</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#soup" data-cat="soup">Soup <span class="sidebar-nav__count">5</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#congee" data-cat="congee">Congee <span class="sidebar-nav__count">7</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#steamed" data-cat="steamed">Steamed <span class="sidebar-nav__count">15</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#buns" data-cat="buns">Steamed Buns <span class="sidebar-nav__count">5</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#rice-rolls" data-cat="rice-rolls">Rice Rolls <span class="sidebar-nav__count">9</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#fried" data-cat="fried">Pan Fried & Deep Fried <span class="sidebar-nav__count">14</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#baked" data-cat="baked">Baked <span class="sidebar-nav__count">6</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#greens" data-cat="greens">Greens <span class="sidebar-nav__count">10</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#bbq" data-cat="bbq">Barbecue <span class="sidebar-nav__count">7</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#fried-rice" data-cat="fried-rice">Fried Rice <span class="sidebar-nav__count">5</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#noodles" data-cat="noodles">Fried Noodles <span class="sidebar-nav__count">8</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#desserts" data-cat="desserts">Desserts <span class="sidebar-nav__count">8</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#drinks" data-cat="drinks">Drinks <span class="sidebar-nav__count">12</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#soda" data-cat="soda">Soda & Juice <span class="sidebar-nav__count">11</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#mocktails" data-cat="mocktails">Mocktails <span class="sidebar-nav__count">7</span></a></li>
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#sides" data-cat="sides">Sides <span class="sidebar-nav__count">4</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- MENU CONTENT -->
+  <main class="menu-content">
+
+    <!-- No results message -->
+    <div class="menu-no-results" id="noResults">
+      <div class="menu-no-results__icon">&#x1F50D;</div>
+      <h3>No dishes found</h3>
+      <p>Try a different search term or browse by category</p>
+    </div>
+
+    <!-- TEA -->
+    <section class="menu-category reveal" id="tea">
+      <div class="menu-category__header">
+        <h2>Tea</h2>
+        <span class="menu-category__count">5 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Jasmine Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.20</span></div>
+      <div class="menu-item"><span class="menu-item__name">Oolong Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.20</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pu'er Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.20</span></div>
+      <div class="menu-item"><span class="menu-item__name">Tie Guan Ying</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.20</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chrysanthemum Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.50</span></div>
+    </section>
+
+    <!-- APPETIZERS -->
+    <section class="menu-category reveal" id="appetizers">
+      <div class="menu-category__header">
+        <h2>Appetizers</h2>
+        <span class="menu-category__count">9 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Cucumber Salad<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.25</span></div>
+      <div class="menu-item"><span class="menu-item__name">Salt & Pepper Chicken Wings<span class="menu-item__desc"> (4 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Salt & Pepper Squid</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Crispy Fried Tofu<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Honey Mustard Prawns<span class="menu-item__desc"> (6 pcs)</span><span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Honey Walnut Prawns<span class="menu-item__desc"> (6 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chicken Feet w/ Chinese Herb</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Stir Fried Radish Cake w/ XO Sauce<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$11.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pork & Shrimp Wontons w/ House Spicy Sauce<span class="menu-item__desc"> (6 pcs)</span><span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div>
+    </section>
+
+    <!-- SOUP / NOODLE SOUP -->
+    <section class="menu-category reveal" id="soup">
+      <div class="menu-category__header">
+        <h2>Soup / Noodle Soup</h2>
+        <span class="menu-category__count">5 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Hot & Sour Soup<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pork & Shrimp Wontons in Hot & Sour Soup<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$15.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pork & Shrimp Wontons Soup<span class="menu-item__desc"> (6 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pork & Shrimp Wontons Noodle Soup</span><span class="menu-item__dots"></span><span class="menu-item__price">$13.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Vegetable Noodle Soup</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div>
+    </section>
+
+    <!-- CONGEE -->
+    <section class="menu-category reveal" id="congee">
+      <div class="menu-category__header">
+        <h2>Congee</h2>
+        <span class="menu-category__count">7 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Century Egg & Pork Congee</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chicken Congee<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Beef Congee</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Shrimp Congee<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Mixed Vegetable Congee<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Plain Congee<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chinese Donut<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$5.95</span></div>
+    </section>
+
+    <!-- STEAMED -->
+    <section class="menu-category reveal" id="steamed">
+      <div class="menu-category__header">
+        <h2>Steamed</h2>
+        <span class="menu-category__count">15 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Shrimp Dumplings<span class="menu-item__desc"> (4 pcs)</span><span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pork & Shrimp Shui Mai<span class="menu-item__desc"> (4 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chicken Feet</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pork Spareribs w/ Black Bean Sauce</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chicken Feet & Pork Spareribs Combo</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Bean Curd Rolls<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Beef Meatballs<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Shanghai Dumplings<span class="menu-item__desc"> (4 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chive & Shrimp Dumplings<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chiu Chow Style Dumplings<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--peanuts" title="Contains Peanuts">P</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Sticky Rice in Lotus Wrap<span class="menu-item__desc"> (2 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">House Special Honeycomb Tripe</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Beef Tripe<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Black Pepper Beef Short Ribs<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Buddha's Feast Dumplings<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.25</span></div>
+    </section>
+
+    <!-- STEAMED BUNS -->
+    <section class="menu-category reveal" id="buns">
+      <div class="menu-category__header">
+        <h2>Steamed Buns</h2>
+        <span class="menu-category__count">5 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Golden Custard Buns<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Custard Buns<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">BBQ Pork Buns<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.25</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chicken Buns<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Seaweed & Green Tea Buns<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.50</span></div>
+    </section>
+
+    <!-- RICE ROLLS -->
+    <section class="menu-category reveal" id="rice-rolls">
+      <div class="menu-category__header">
+        <h2>Rice Rolls</h2>
+        <span class="menu-category__count">9 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Crispy Rice Roll w/ Shrimp & Nori</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Beef Rice Roll</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Shrimp Rice Roll</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">BBQ Pork Rice Roll</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chinese Donut in Rice Roll<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Plain Rice Roll<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.25</span></div>
+      <div class="menu-item"><span class="menu-item__name">Mixed Mushroom Rice Roll<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Steamed Rice Roll w/ Spareribs</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Steamed Rice Roll w/ Chicken Feet</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+    </section>
+
+    <!-- PAN FRIED & DEEP FRIED -->
+    <section class="menu-category reveal" id="fried">
+      <div class="menu-category__header">
+        <h2>Pan Fried & Deep Fried</h2>
+        <span class="menu-category__count">14 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Pan Fried Chives & Shrimp Dumplings<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pan Fried Vegetable Pork Buns<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pan Fried Pork Pot Stickers<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pan Fried Radish Cakes<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.25</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pan Fried Taro Cakes w/ Pork<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Deep Fried Stuffed Eggplant w/ Shrimp<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Deep Fried Stuffed Tofu w/ Shrimp<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Deep Fried Shrimp Balls<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Deep Fried Shrimp Dumplings<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Purple Potato w/ Golden Custard Balls<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.25</span></div>
+      <div class="menu-item"><span class="menu-item__name">Deep Fried Shrimp Rolls w/ Garlic<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Crispy Bean Curd Rolls w/ Shrimp<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Vegetable Egg Rolls<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Deep Fried Pork Puffs<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div>
+    </section>
+
+    <!-- BAKED -->
+    <section class="menu-category reveal" id="baked">
+      <div class="menu-category__header">
+        <h2>Baked</h2>
+        <span class="menu-category__count">6 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Pineapple Bun<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$5.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Portuguese Style Custard Tart<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Egg Tart<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.25</span></div>
+      <div class="menu-item"><span class="menu-item__name">BBQ Pork Pies<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">House Special BBQ Pork Buns<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Four-Tune Buns<span class="menu-item__desc"> (4 pcs) — Sweet Taro, BBQ Pork, Black Sesame, Pork Floss</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+    </section>
+
+    <!-- GREENS -->
+    <section class="menu-category reveal" id="greens">
+      <div class="menu-category__header">
+        <h2>Greens</h2>
+        <span class="menu-category__count">10 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Stir Fried Green Beans w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Stir Fried Broccoli w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Stir Fried Chinese Broccoli w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Stir Fried Baby Bok Choi w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Stir Fried Lettuce w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Stir Fried Pea Vine w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Steamed Lettuce w/ Oyster Sauce</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Steamed Chinese Broccoli w/ Oyster Sauce</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Steamed Baby Bok Choi w/ Oyster Sauce</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Steamed Broccoli w/ Wasabi Soy Sauce<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+    </section>
+
+    <!-- BARBECUE -->
+    <section class="menu-category reveal" id="bbq">
+      <div class="menu-category__header">
+        <h2>Barbecue</h2>
+        <span class="menu-category__count">7 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Young Pigeon</span><span class="menu-item__dots"></span><span class="menu-item__price">$19.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Roast Duck</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Roast Pork</span><span class="menu-item__dots"></span><span class="menu-item__price">$14.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">BBQ Pork</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Hong Kong Style Peking Duck<span class="menu-item__desc"> (half)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$29.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Hong Kong Style Peking Duck<span class="menu-item__desc"> (whole)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$55.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Extra Pancake</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.00</span></div>
+    </section>
+
+    <!-- FRIED RICE -->
+    <section class="menu-category reveal" id="fried-rice">
+      <div class="menu-category__header">
+        <h2>Fried Rice</h2>
+        <span class="menu-category__count">5 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Shrimp Fried Rice<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Beef Fried Rice</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">BBQ Pork Fried Rice</span><span class="menu-item__dots"></span><span class="menu-item__price">$11.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chicken Fried Rice<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$11.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Vegetable Fried Rice<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$11.50</span></div>
+    </section>
+
+    <!-- FRIED NOODLES -->
+    <section class="menu-category reveal" id="noodles">
+      <div class="menu-category__header">
+        <h2>Fried Noodles</h2>
+        <span class="menu-category__count">8 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Beef Chow Fun</span><span class="menu-item__dots"></span><span class="menu-item__price">$13.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Beef Fried Noodle</span><span class="menu-item__dots"></span><span class="menu-item__price">$13.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Chicken Fried Noodle</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Shrimp Fried Noodle</span><span class="menu-item__dots"></span><span class="menu-item__price">$13.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Vegetable Fried Noodle<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$12.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Soy Sauce Fried Noodle<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$11.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Stir Fried Rice Roll w/ XO Sauce<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$12.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Stir Fried Rice Roll w/ Soy Sauce<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div>
+    </section>
+
+    <!-- DESSERTS -->
+    <section class="menu-category reveal" id="desserts">
+      <div class="menu-category__header">
+        <h2>Desserts</h2>
+        <span class="menu-category__count">8 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Durian Puff Pastries<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Brown Sugar Cakes<span class="menu-item__desc"> (4 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Steamed Malay Sponge Cake<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Deep Fried Sesame Balls w/ Red Bean<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Mango Mochi<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Osmanthus & Goji Berry Pudding<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Mango Coconut Milk Pudding<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Willow Dew<span class="menu-item__desc"> — Mango, Coconut Milk, Grapefruit, Sago</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div>
+    </section>
+
+    <!-- DRINKS -->
+    <section class="menu-category reveal" id="drinks">
+      <div class="menu-category__header">
+        <h2>Drinks</h2>
+        <span class="menu-category__count">12 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Hot Hong Kong Milk Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Hot Hong Kong Coffee</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Hot Hong Kong Milk Tea & Coffee</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Hot Hong Kong Lemon Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.95</span></div>
+      <div class="menu-item"><span class="menu-item__name">Iced Hong Kong Milk Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$5.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Iced Hong Kong Coffee</span><span class="menu-item__dots"></span><span class="menu-item__price">$5.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Iced Hong Kong Milk Tea & Coffee</span><span class="menu-item__dots"></span><span class="menu-item__price">$5.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Iced Hong Kong Lemon Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$5.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Watermelon Freeze w/ Coconut Milk</span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Mango Freeze w/ Coconut Milk</span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Fresh Watermelon Juice</span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Add Boba</span><span class="menu-item__dots"></span><span class="menu-item__price">+$0.75</span></div>
+    </section>
+
+    <!-- SODA & JUICE -->
+    <section class="menu-category reveal" id="soda">
+      <div class="menu-category__header">
+        <h2>Soda & Juice</h2>
+        <span class="menu-category__count">11 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Coca-Cola</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Coca-Cola<span class="menu-item__desc"> (glass bottle)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$5.65</span></div>
+      <div class="menu-item"><span class="menu-item__name">Sprite</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Diet Coca-Cola</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Club Soda<span class="menu-item__desc"> (by glass)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$2.75</span></div>
+      <div class="menu-item"><span class="menu-item__name">Pineapple Juice</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Apple Juice</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Orange Juice</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Lemonade</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Shirley Temple</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Cranberry Juice</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.50</span></div>
+    </section>
+
+    <!-- MOCKTAILS -->
+    <section class="menu-category reveal" id="mocktails">
+      <div class="menu-category__header">
+        <h2>Mocktails</h2>
+        <span class="menu-category__count">7 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">Sparkling Lavender Lemonade</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Strawberry Lemonade Fizz</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Strawberry Mango Lemonade Fizz</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Oolong Tea Lemonade</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.00</span></div>
+      <div class="menu-item"><span class="menu-item__name">Blood Orange Lemonade Refresher</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.00</span></div>
+      <div class="menu-item"><span class="menu-item__name">Mango Virgin Mojito</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div>
+      <div class="menu-item"><span class="menu-item__name">Virgin Mojito</span><span class="menu-item__dots"></span><span class="menu-item__price">$9.50</span></div>
+    </section>
+
+    <!-- SIDES -->
+    <section class="menu-category reveal" id="sides">
+      <div class="menu-category__header">
+        <h2>Sides</h2>
+        <span class="menu-category__count">4 items</span>
+      </div>
+      <div class="menu-item"><span class="menu-item__name">White Rice</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.00</span></div>
+      <div class="menu-item"><span class="menu-item__name">Extra Vegetables<span class="menu-item__desc"> (for Peking Duck)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$4.00</span></div>
+      <div class="menu-item"><span class="menu-item__name">Side Noodle</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.00</span></div>
+      <div class="menu-item"><span class="menu-item__name">Side XO Sauce</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.00</span></div>
+    </section>
+
+    <!-- RESERVE CTA -->
+    <div class="menu-cta reveal">
+      <h2>Ready to dine in?</h2>
+      <p>Walk in for parties of 8 or fewer. For larger groups, reserve ahead and we'll have your table ready.</p>
+      <a href="https://www.yelp.com/reservations/mr-dim-sum-tukwila-3" target="_blank" rel="noopener" class="btn btn--gold">Reserve a table</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="footer__brand-logo">
+        <p>More than dim sum — it's a way of life. Handmade Cantonese dim sum served all day at Westfield Southcenter Mall.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="mr-dimsum.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li><a href="contact.html">Mon–Sat: 10am–9pm</a></li>
+          <li><a href="contact.html">Sunday: 10am–8pm</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Contact</h4>
+        <ul>
+          <li><a href="mailto:info@mrdimsumusa.com">info@mrdimsumusa.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <address>
+          973 Southcenter Mall<br>
+          Tukwila, WA 98188
+        </address>
+        <p style="margin-top:12px;font-size:0.875rem"><a href="https://maps.google.com/?q=973+Southcenter+Mall+Tukwila+WA+98188" target="_blank" rel="noopener">Get Directions</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Mr. Dim Sum. All rights reserved.</span>
+      <div class="footer__socials">
+        <a href="https://instagram.com/mrdimsumusa" target="_blank" rel="noopener" aria-label="Follow Mr. Dim Sum on Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="mailto:info@mrdimsumusa.com" aria-label="Email Mr. Dim Sum">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+// Mobile menu
+function toggleMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var overlay = document.getElementById('mobileOverlay');
+  var btn = document.querySelector('.nav__hamburger');
+  var isOpen = menu.classList.contains('is-open');
+  if (isOpen) {
+    closeMenu();
+  } else {
+    menu.classList.add('is-open');
+    overlay.classList.add('is-open');
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Close menu');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var overlay = document.getElementById('mobileOverlay');
+  var btn = document.querySelector('.nav__hamburger');
+  menu.classList.remove('is-open');
+  overlay.classList.remove('is-open');
+  btn.classList.remove('is-active');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Open menu');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeMenu();
+    closeCatDropdown();
+  }
+});
+
+// Mobile category dropdown
+function openCatDropdown() {
+  document.getElementById('mobileCatDropdown').classList.add('is-open');
+  document.getElementById('mobileCatBtn').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCatDropdown() {
+  document.getElementById('mobileCatDropdown').classList.remove('is-open');
+  document.getElementById('mobileCatBtn').classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+document.getElementById('mobileCatBtn').addEventListener('click', function() {
+  if (document.getElementById('mobileCatDropdown').classList.contains('is-open')) {
+    closeCatDropdown();
+  } else {
+    openCatDropdown();
+  }
+});
+
+// Scroll-triggered reveal animations
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) {
+  observer.observe(el);
+});
+
+// ============================================
+// SIDEBAR SCROLL — click to scroll with offset
+// ============================================
+var navHeight = function() {
+  var nav = document.querySelector('.nav').offsetHeight;
+  var legend = document.querySelector('.legend-bar');
+  return nav + (legend ? legend.offsetHeight : 0);
+};
+
+// Handle sidebar link clicks with manual scroll offset
+function scrollToCategory(e) {
+  e.preventDefault();
+  var href = e.currentTarget.getAttribute('href');
+  var target = document.querySelector(href);
+  if (!target) return;
+  var offset = navHeight() + 16;
+  var y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top: y, behavior: 'auto' });
+}
+
+// Sidebar nav links
+document.querySelectorAll('.sidebar-nav__link').forEach(function(link) {
+  link.addEventListener('click', scrollToCategory);
+});
+
+// Mobile dropdown links
+document.querySelectorAll('.mobile-cat-dropdown__link').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    scrollToCategory(e);
+    closeCatDropdown();
+  });
+});
+
+// ============================================
+// ACTIVE CATEGORY HIGHLIGHTING ON SCROLL
+// ============================================
+var sidebarLinks = document.querySelectorAll('.sidebar-nav__link');
+var mobileDropLinks = document.querySelectorAll('.mobile-cat-dropdown__link');
+var sections = document.querySelectorAll('.menu-category');
+
+function updateActiveCategory() {
+  var current = '';
+  var scrollTop = window.pageYOffset;
+  var offset = navHeight() + 60;
+
+  for (var i = 0; i < sections.length; i++) {
+    var section = sections[i];
+    if (section.classList.contains('is-hidden')) continue;
+    var top = section.getBoundingClientRect().top + scrollTop - offset;
+    if (scrollTop >= top) {
+      current = section.id;
+    }
+  }
+
+  sidebarLinks.forEach(function(link) {
+    var isActive = link.getAttribute('href') === '#' + current;
+    link.classList.toggle('is-active', isActive);
+    // Auto-scroll sidebar to keep active link visible
+    if (isActive && link.closest('.menu-sidebar')) {
+      var sidebar = link.closest('.menu-sidebar');
+      var linkTop = link.offsetTop;
+      var sidebarScroll = sidebar.scrollTop;
+      var sidebarHeight = sidebar.clientHeight;
+      if (linkTop < sidebarScroll + 60 || linkTop > sidebarScroll + sidebarHeight - 60) {
+        sidebar.scrollTo({ top: linkTop - sidebarHeight / 3, behavior: 'smooth' });
+      }
+    }
+  });
+
+  mobileDropLinks.forEach(function(link) {
+    link.classList.toggle('is-active', link.getAttribute('href') === '#' + current);
+  });
+}
+
+window.addEventListener('scroll', updateActiveCategory, { passive: true });
+updateActiveCategory();
+
+// ============================================
+// SEARCH FUNCTIONALITY
+// ============================================
+var searchInput = document.getElementById('searchInput');
+var searchClear = document.getElementById('searchClear');
+var mobileSearchInput = document.getElementById('mobileSearchInput');
+var mobileSearchClear = document.getElementById('mobileSearchClear');
+var searchResultsInfo = document.getElementById('searchResultsInfo');
+var noResults = document.getElementById('noResults');
+var allItems = document.querySelectorAll('.menu-item');
+var allCategories = document.querySelectorAll('.menu-category');
+var menuCta = document.querySelector('.menu-cta');
+
+function performSearch(query) {
+  query = query.trim().toLowerCase();
+
+  // Sync both search inputs
+  if (document.activeElement !== searchInput) searchInput.value = query;
+  if (document.activeElement !== mobileSearchInput) mobileSearchInput.value = query;
+
+  // Toggle clear buttons
+  searchClear.classList.toggle('is-visible', query.length > 0);
+  mobileSearchClear.classList.toggle('is-visible', query.length > 0);
+
+  if (!query) {
+    // Reset — show everything
+    allItems.forEach(function(item) { item.classList.remove('is-hidden', 'is-highlighted'); });
+    allCategories.forEach(function(cat) { cat.classList.remove('is-hidden'); });
+    searchResultsInfo.classList.remove('is-visible');
+    noResults.classList.remove('is-visible');
+    if (menuCta) menuCta.style.display = '';
+    return;
+  }
+
+  var matchCount = 0;
+  var visibleCategories = new Set();
+
+  allItems.forEach(function(item) {
+    var nameEl = item.querySelector('.menu-item__name');
+    var text = nameEl ? nameEl.textContent.toLowerCase() : '';
+    if (text.indexOf(query) !== -1) {
+      item.classList.remove('is-hidden');
+      item.classList.add('is-highlighted');
+      matchCount++;
+      var cat = item.closest('.menu-category');
+      if (cat) visibleCategories.add(cat.id);
+    } else {
+      item.classList.add('is-hidden');
+      item.classList.remove('is-highlighted');
+    }
+  });
+
+  allCategories.forEach(function(cat) {
+    if (visibleCategories.has(cat.id)) {
+      cat.classList.remove('is-hidden');
+    } else {
+      cat.classList.add('is-hidden');
+    }
+  });
+
+  // Update results info
+  if (matchCount > 0) {
+    searchResultsInfo.textContent = matchCount + ' dish' + (matchCount !== 1 ? 'es' : '') + ' found';
+    searchResultsInfo.classList.add('is-visible');
+    noResults.classList.remove('is-visible');
+    // Scroll to first visible category
+    var firstVisible = document.querySelector('.menu-category:not(.is-hidden)');
+    if (firstVisible) {
+      var offset = navHeight() + 16;
+      var y = firstVisible.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'auto' });
+    }
+  } else {
+    searchResultsInfo.classList.remove('is-visible');
+    noResults.classList.add('is-visible');
+  }
+
+  if (menuCta) menuCta.style.display = query ? 'none' : '';
+}
+
+// Debounce for search
+var searchTimeout;
+function handleSearchInput(e) {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(function() {
+    performSearch(e.target.value);
+  }, 150);
+}
+
+searchInput.addEventListener('input', handleSearchInput);
+mobileSearchInput.addEventListener('input', handleSearchInput);
+
+searchClear.addEventListener('click', function() {
+  searchInput.value = '';
+  mobileSearchInput.value = '';
+  performSearch('');
+  searchInput.focus();
+});
+
+mobileSearchClear.addEventListener('click', function() {
+  searchInput.value = '';
+  mobileSearchInput.value = '';
+  performSearch('');
+  mobileSearchInput.focus();
+});
+
+// ============================================
+// BACK TO TOP
+// ============================================
+var backToTopBtn = document.getElementById('backToTop');
+var ticking = false;
+
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add('is-visible');
+      } else {
+        backToTopBtn.classList.remove('is-visible');
+      }
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+</script>
+
+</body>
+</html>
