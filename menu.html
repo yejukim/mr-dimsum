@@ -539,33 +539,38 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   white-space: nowrap;
 }
 
-/* MENU ITEM */
-.menu-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(213,182,134,0.12);
-  border-radius: 4px;
-  transition: background 0.2s ease;
+/* MENU ITEMS GRID */
+.menu-items-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
-.menu-item:hover { background: rgba(213,182,134,0.06); }
-.menu-item:last-child { border-bottom: none; }
+
+/* MENU ITEM CARD */
+.menu-item {
+  background: var(--white);
+  border: 1px solid rgba(213,182,134,0.18);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+}
+.menu-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
 
 /* Search highlight */
 .menu-item.is-highlighted {
-  background: rgba(213,182,134,0.12);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
 }
 
 /* MENU ITEM PHOTO */
 .menu-item__photo {
-  width: 56px;
-  height: 56px;
-  border-radius: 8px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  flex-shrink: 0;
   background: var(--gray-100);
-  border: 1px solid rgba(213,182,134,0.15);
   position: relative;
 }
 .menu-item__photo img {
@@ -573,6 +578,10 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.menu-item:hover .menu-item__photo img {
+  transform: scale(1.04);
 }
 /* Placeholder icon when no photo */
 .menu-item__photo--empty {
@@ -581,8 +590,8 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   justify-content: center;
 }
 .menu-item__photo--empty svg {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   stroke: var(--gray-300);
   fill: none;
   stroke-width: 1.5;
@@ -590,38 +599,48 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   stroke-linejoin: round;
 }
 
+/* CARD INFO */
 .menu-item__info {
-  flex: 1;
-  min-width: 0;
+  padding: 14px 16px 16px;
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-item__top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 8px;
 }
 
 .menu-item__name {
   font-family: var(--font-body);
   font-size: 0.9375rem;
+  font-weight: 700;
   color: var(--charcoal);
-  flex-shrink: 1;
-  min-width: 0;
+  line-height: 1.4;
+  flex: 1;
 }
 
 .menu-item__desc {
+  display: block;
   font-size: 0.8125rem;
   color: var(--gray-500);
   font-weight: 400;
+  line-height: 1.5;
+  margin-top: 2px;
 }
 
 .menu-item__tags {
-  display: inline-flex;
+  display: flex;
   gap: 4px;
-  margin-left: 6px;
-  flex-shrink: 0;
+  margin-top: 6px;
 }
 
 .tag {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -630,7 +649,6 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   font-size: 0.55rem;
   font-weight: 800;
   line-height: 1;
-  vertical-align: middle;
 }
 
 .tag--vegan { background: #D1FAE5; color: #065F46; }
@@ -640,18 +658,13 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 .tag--peanuts { background: #FDE68A; color: #78350F; }
 
 .menu-item__dots {
-  flex: 1;
-  min-width: 20px;
-  border-bottom: 1px dotted var(--gray-300);
-  margin: 0 4px;
-  align-self: center;
-  height: 0;
+  display: none;
 }
 
 .menu-item__price {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  font-weight: 700;
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--red);
   white-space: nowrap;
   flex-shrink: 0;
@@ -1042,9 +1055,10 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   }
 
   .menu-category__header h2 { font-size: 1.25rem; }
-  .menu-item__photo { width: 48px; height: 48px; border-radius: 6px; }
-  .menu-item__name { white-space: normal; font-size: 0.875rem; }
-  .menu-item__price { font-size: 0.875rem; }
+  .menu-items-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .menu-item__name { font-size: 0.875rem; }
+  .menu-item__price { font-size: 0.8125rem; }
+  .menu-item__info { padding: 12px 14px 14px; }
   .menu-cta { padding: 40px 20px; }
 
   .footer__grid { grid-template-columns: 1fr 1fr; }
@@ -1055,10 +1069,10 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 
 @media (max-width: 480px) {
   .footer__grid { grid-template-columns: 1fr; gap: 28px; }
-  .menu-item__dots { display: none; }
-  .menu-item { justify-content: space-between; }
-  .menu-item__photo { width: 44px; height: 44px; }
-  .menu-item__name { flex: 1; min-width: 0; padding-right: 12px; }
+  .menu-items-grid { grid-template-columns: 1fr; gap: 12px; }
+  .menu-item { display: grid; grid-template-columns: 120px 1fr; }
+  .menu-item__photo { aspect-ratio: 1; }
+  .menu-item__info { padding: 12px 14px; justify-content: center; }
 }
 
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
@@ -1229,11 +1243,12 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Tea</h2>
         <span class="menu-category__count">5 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Jasmine Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.20</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Jasmine Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.20</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Oolong Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.20</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pu'er Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.20</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Tie Guan Ying</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.20</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Chrysanthemum Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.50</span></div></div>
+</div>
     </section>
 
     <!-- APPETIZERS -->
@@ -1242,7 +1257,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Appetizers</h2>
         <span class="menu-category__count">9 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Cucumber Salad<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.25</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Cucumber Salad<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.25</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Salt & Pepper Chicken Wings<span class="menu-item__desc"> (4 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Salt & Pepper Squid</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Crispy Fried Tofu<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.95</span></div></div>
@@ -1251,6 +1266,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Chicken Feet w/ Chinese Herb</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Stir Fried Radish Cake w/ XO Sauce<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$11.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pork & Shrimp Wontons w/ House Spicy Sauce<span class="menu-item__desc"> (6 pcs)</span><span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div></div>
+</div>
     </section>
 
     <!-- SOUP / NOODLE SOUP -->
@@ -1259,11 +1275,12 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Soup / Noodle Soup</h2>
         <span class="menu-category__count">5 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Hot & Sour Soup<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Hot & Sour Soup<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pork & Shrimp Wontons in Hot & Sour Soup<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$15.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pork & Shrimp Wontons Soup<span class="menu-item__desc"> (6 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pork & Shrimp Wontons Noodle Soup</span><span class="menu-item__dots"></span><span class="menu-item__price">$13.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Vegetable Noodle Soup</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div></div>
+</div>
     </section>
 
     <!-- CONGEE -->
@@ -1272,13 +1289,14 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Congee</h2>
         <span class="menu-category__count">7 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Century Egg & Pork Congee</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Century Egg & Pork Congee</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Chicken Congee<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Beef Congee</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Shrimp Congee<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Mixed Vegetable Congee<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Plain Congee<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Chinese Donut<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$5.95</span></div></div>
+</div>
     </section>
 
     <!-- STEAMED -->
@@ -1287,7 +1305,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Steamed</h2>
         <span class="menu-category__count">15 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Shrimp Dumplings<span class="menu-item__desc"> (4 pcs)</span><span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Shrimp Dumplings<span class="menu-item__desc"> (4 pcs)</span><span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pork & Shrimp Shui Mai<span class="menu-item__desc"> (4 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Chicken Feet</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pork Spareribs w/ Black Bean Sauce</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
@@ -1302,6 +1320,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Beef Tripe<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Black Pepper Beef Short Ribs<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Buddha's Feast Dumplings<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.25</span></div></div>
+</div>
     </section>
 
     <!-- STEAMED BUNS -->
@@ -1310,11 +1329,12 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Steamed Buns</h2>
         <span class="menu-category__count">5 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Golden Custard Buns<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Golden Custard Buns<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Custard Buns<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">BBQ Pork Buns<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.25</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Chicken Buns<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Seaweed & Green Tea Buns<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$8.50</span></div></div>
+</div>
     </section>
 
     <!-- RICE ROLLS -->
@@ -1323,7 +1343,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Rice Rolls</h2>
         <span class="menu-category__count">9 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Crispy Rice Roll w/ Shrimp & Nori</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Crispy Rice Roll w/ Shrimp & Nori</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Beef Rice Roll</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Shrimp Rice Roll</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">BBQ Pork Rice Roll</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
@@ -1332,6 +1352,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Mixed Mushroom Rice Roll<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Steamed Rice Roll w/ Spareribs</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Steamed Rice Roll w/ Chicken Feet</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
+</div>
     </section>
 
     <!-- PAN FRIED & DEEP FRIED -->
@@ -1340,7 +1361,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Pan Fried & Deep Fried</h2>
         <span class="menu-category__count">14 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pan Fried Chives & Shrimp Dumplings<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pan Fried Chives & Shrimp Dumplings<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pan Fried Vegetable Pork Buns<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pan Fried Pork Pot Stickers<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pan Fried Radish Cakes<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.25</span></div></div>
@@ -1354,6 +1375,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Crispy Bean Curd Rolls w/ Shrimp<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Vegetable Egg Rolls<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Deep Fried Pork Puffs<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div></div>
+</div>
     </section>
 
     <!-- BAKED -->
@@ -1362,12 +1384,13 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Baked</h2>
         <span class="menu-category__count">6 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pineapple Bun<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$5.50</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pineapple Bun<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$5.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Portuguese Style Custard Tart<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Egg Tart<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.25</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">BBQ Pork Pies<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">House Special BBQ Pork Buns<span class="menu-item__desc"> (3 pcs)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Four-Tune Buns<span class="menu-item__desc"> (4 pcs) — Sweet Taro, BBQ Pork, Black Sesame, Pork Floss</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
+</div>
     </section>
 
     <!-- GREENS -->
@@ -1376,7 +1399,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Greens</h2>
         <span class="menu-category__count">10 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Stir Fried Green Beans w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Stir Fried Green Beans w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Stir Fried Broccoli w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Stir Fried Chinese Broccoli w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Stir Fried Baby Bok Choi w/ Garlic<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
@@ -1386,6 +1409,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Steamed Chinese Broccoli w/ Oyster Sauce</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Steamed Baby Bok Choi w/ Oyster Sauce</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Steamed Broccoli w/ Wasabi Soy Sauce<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
+</div>
     </section>
 
     <!-- BARBECUE -->
@@ -1394,13 +1418,14 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Barbecue</h2>
         <span class="menu-category__count">7 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Young Pigeon</span><span class="menu-item__dots"></span><span class="menu-item__price">$19.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Young Pigeon</span><span class="menu-item__dots"></span><span class="menu-item__price">$19.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Roast Duck</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Roast Pork</span><span class="menu-item__dots"></span><span class="menu-item__price">$14.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">BBQ Pork</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Hong Kong Style Peking Duck<span class="menu-item__desc"> (half)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$29.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Hong Kong Style Peking Duck<span class="menu-item__desc"> (whole)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$55.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Extra Pancake</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.00</span></div></div>
+</div>
     </section>
 
     <!-- FRIED RICE -->
@@ -1409,11 +1434,12 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Fried Rice</h2>
         <span class="menu-category__count">5 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Shrimp Fried Rice<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Shrimp Fried Rice<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Beef Fried Rice</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">BBQ Pork Fried Rice</span><span class="menu-item__dots"></span><span class="menu-item__price">$11.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Chicken Fried Rice<span class="menu-item__tags"><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$11.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Vegetable Fried Rice<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span><span class="tag tag--gf" title="Gluten-Free">GF</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$11.50</span></div></div>
+</div>
     </section>
 
     <!-- FRIED NOODLES -->
@@ -1422,7 +1448,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Fried Noodles</h2>
         <span class="menu-category__count">8 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Beef Chow Fun</span><span class="menu-item__dots"></span><span class="menu-item__price">$13.50</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Beef Chow Fun</span><span class="menu-item__dots"></span><span class="menu-item__price">$13.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Beef Fried Noodle</span><span class="menu-item__dots"></span><span class="menu-item__price">$13.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Chicken Fried Noodle</span><span class="menu-item__dots"></span><span class="menu-item__price">$12.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Shrimp Fried Noodle</span><span class="menu-item__dots"></span><span class="menu-item__price">$13.50</span></div></div>
@@ -1430,6 +1456,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Soy Sauce Fried Noodle<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$11.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Stir Fried Rice Roll w/ XO Sauce<span class="menu-item__tags"><span class="tag tag--spicy" title="Spicy">S</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$12.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Stir Fried Rice Roll w/ Soy Sauce<span class="menu-item__tags"><span class="tag tag--vegan" title="Vegan">VG</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$10.95</span></div></div>
+</div>
     </section>
 
     <!-- DESSERTS -->
@@ -1438,7 +1465,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Desserts</h2>
         <span class="menu-category__count">8 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Durian Puff Pastries<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Durian Puff Pastries<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Brown Sugar Cakes<span class="menu-item__desc"> (4 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$7.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Steamed Malay Sponge Cake<span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Deep Fried Sesame Balls w/ Red Bean<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div></div>
@@ -1446,6 +1473,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Osmanthus & Goji Berry Pudding<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Mango Coconut Milk Pudding<span class="menu-item__desc"> (3 pcs)</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Willow Dew<span class="menu-item__desc"> — Mango, Coconut Milk, Grapefruit, Sago</span><span class="menu-item__tags"><span class="tag tag--vegetarian" title="Vegetarian">V</span></span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.95</span></div></div>
+</div>
     </section>
 
     <!-- DRINKS -->
@@ -1454,7 +1482,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Drinks</h2>
         <span class="menu-category__count">12 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Hot Hong Kong Milk Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.95</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Hot Hong Kong Milk Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Hot Hong Kong Coffee</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Hot Hong Kong Milk Tea & Coffee</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.95</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Hot Hong Kong Lemon Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.95</span></div></div>
@@ -1466,6 +1494,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Mango Freeze w/ Coconut Milk</span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Fresh Watermelon Juice</span><span class="menu-item__dots"></span><span class="menu-item__price">$6.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Add Boba</span><span class="menu-item__dots"></span><span class="menu-item__price">+$0.75</span></div></div>
+</div>
     </section>
 
     <!-- SODA & JUICE -->
@@ -1474,7 +1503,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Soda & Juice</h2>
         <span class="menu-category__count">11 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Coca-Cola</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.50</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Coca-Cola</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Coca-Cola<span class="menu-item__desc"> (glass bottle)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$5.65</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Sprite</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Diet Coca-Cola</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.50</span></div></div>
@@ -1485,6 +1514,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Lemonade</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Shirley Temple</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Cranberry Juice</span><span class="menu-item__dots"></span><span class="menu-item__price">$4.50</span></div></div>
+</div>
     </section>
 
     <!-- MOCKTAILS -->
@@ -1493,13 +1523,14 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Mocktails</h2>
         <span class="menu-category__count">7 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Sparkling Lavender Lemonade</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Sparkling Lavender Lemonade</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Strawberry Lemonade Fizz</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Strawberry Mango Lemonade Fizz</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Oolong Tea Lemonade</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.00</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Blood Orange Lemonade Refresher</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.00</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Mango Virgin Mojito</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.50</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Virgin Mojito</span><span class="menu-item__dots"></span><span class="menu-item__price">$9.50</span></div></div>
+</div>
     </section>
 
     <!-- SIDES -->
@@ -1508,10 +1539,11 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
         <h2>Sides</h2>
         <span class="menu-category__count">4 items</span>
       </div>
-      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">White Rice</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.00</span></div></div>
+      <div class="menu-items-grid">      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">White Rice</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.00</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Extra Vegetables<span class="menu-item__desc"> (for Peking Duck)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$4.00</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Side Noodle</span><span class="menu-item__dots"></span><span class="menu-item__price">$2.00</span></div></div>
       <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Side XO Sauce</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.00</span></div></div>
+</div>
     </section>
 
     <!-- RESERVE CTA -->
