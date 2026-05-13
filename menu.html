@@ -507,6 +507,95 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   min-width: 0;
 }
 
+/* HAPPY HOUR SECTION */
+.menu-category--happy-hour {
+  background: linear-gradient(180deg, rgba(139,90,43,0.13) 0%, rgba(213,182,134,0.18) 100%);
+  border: 2px solid rgba(183,142,74,0.35);
+  box-shadow: inset 0 0 60px rgba(213,182,134,0.1);
+  border-radius: 16px;
+  padding: 24px 24px 32px;
+  margin-top: 48px;
+}
+
+.happy-hour-banner {
+  background: linear-gradient(135deg, var(--brown) 0%, #5a3a1a 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* Sticky floating label while scrolling through happy hour */
+.happy-hour-sticky {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-60px);
+  background: var(--brown);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  white-space: nowrap;
+}
+.happy-hour-sticky.is-visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+.happy-hour-banner__icon {
+  font-size: 1.75rem;
+}
+.happy-hour-banner__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+.happy-hour-banner__details {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.9);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.happy-hour-banner__tag {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.menu-category--happy-hour .menu-category__header {
+  border-bottom-color: var(--gold);
+}
+.menu-category--happy-hour .menu-category__header h2 {
+  color: var(--brown);
+}
+.menu-category--happy-hour .menu-item {
+  border-color: rgba(183,142,74,0.25);
+  box-shadow: 0 2px 8px rgba(139,90,43,0.06);
+}
+
 /* CATEGORY SECTION */
 .menu-category {
   padding-top: 48px;
@@ -1170,6 +1259,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       </button>
     </div>
     <ul class="mobile-cat-dropdown__list" id="mobileCatList">
+      <li><a class="mobile-cat-dropdown__link" href="#happy-hour" onclick="closeCatDropdown()">🍻 Happy Hour <span>15</span></a></li>
       <li><a class="mobile-cat-dropdown__link" href="#tea" onclick="closeCatDropdown()">Tea <span>5</span></a></li>
       <li><a class="mobile-cat-dropdown__link" href="#appetizers" onclick="closeCatDropdown()">Appetizers <span>9</span></a></li>
       <li><a class="mobile-cat-dropdown__link" href="#soup" onclick="closeCatDropdown()">Soup <span>5</span></a></li>
@@ -1192,6 +1282,9 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   </div>
 </div>
 
+<!-- HAPPY HOUR STICKY PILL -->
+<div class="happy-hour-sticky" id="happyHourSticky">🍻 Happy Hour · Tue–Fri 2–6 pm</div>
+
 <!-- MENU LAYOUT: Sidebar + Content -->
 <div class="menu-layout">
 
@@ -1206,6 +1299,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
     </div>
     <div class="search-results-info" id="searchResultsInfo"></div>
     <ul class="sidebar-nav" id="sidebarNav">
+      <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#happy-hour" data-cat="happy-hour">🍻 Happy Hour <span class="sidebar-nav__count">15</span></a></li>
       <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#tea" data-cat="tea">Tea <span class="sidebar-nav__count">5</span></a></li>
       <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#appetizers" data-cat="appetizers">Appetizers <span class="sidebar-nav__count">9</span></a></li>
       <li class="sidebar-nav__item"><a class="sidebar-nav__link" href="#soup" data-cat="soup">Soup <span class="sidebar-nav__count">5</span></a></li>
@@ -1236,6 +1330,55 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
       <h3>No dishes found</h3>
       <p>Try a different search term or browse by category</p>
     </div>
+
+    <!-- HAPPY HOUR -->
+    <section class="menu-category menu-category--happy-hour reveal" id="happy-hour">
+      <div class="happy-hour-banner">
+        <span class="happy-hour-banner__icon">🍻</span>
+        <div>
+          <div class="happy-hour-banner__title">Happy Hour</div>
+          <div class="happy-hour-banner__details">
+            <span class="happy-hour-banner__tag">Tue – Fri &nbsp;2 pm – 6 pm</span>
+            <span>Except holidays · Dine-in only</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-category__header">
+        <h2>Food</h2>
+        <span class="menu-category__count">9 items</span>
+      </div>
+      <div class="menu-items-grid">
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Cucumber Salad</span><span class="menu-item__dots"></span><span class="menu-item__price">$5.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Salt &amp; Pepper Chicken Wings</span><span class="menu-item__dots"></span><span class="menu-item__price">$7.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Salt &amp; Pepper Squid</span><span class="menu-item__dots"></span><span class="menu-item__price">$8.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Shrimp Dumpling</span><span class="menu-item__dots"></span><span class="menu-item__price">$6.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Pork Pot Sticker</span><span class="menu-item__dots"></span><span class="menu-item__price">$6.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Crispy Bean Curd Roll w/ Shrimp</span><span class="menu-item__dots"></span><span class="menu-item__price">$6.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">House Special BBQ Pork Bun<span class="menu-item__desc"> (one order per table)</span></span><span class="menu-item__dots"></span><span class="menu-item__price">$6.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Egg Tart</span><span class="menu-item__dots"></span><span class="menu-item__price">$5.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Sesame Ball w/ Red Bean</span><span class="menu-item__dots"></span><span class="menu-item__price">$5.00</span></div></div>
+</div>
+      <div class="menu-category__header" style="margin-top: 32px;">
+        <h2>Hong Kong Teas</h2>
+        <span class="menu-category__count">2 items</span>
+      </div>
+      <div class="menu-items-grid">
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">HK Iced Milk Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.50</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">HK Iced Lemon Tea</span><span class="menu-item__dots"></span><span class="menu-item__price">$3.50</span></div></div>
+</div>
+      <div class="menu-category__header" style="margin-top: 32px;">
+        <h2>Beverages</h2>
+        <span class="menu-category__count">6 items</span>
+      </div>
+      <div class="menu-items-grid">
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">TsingTao</span><span class="menu-item__dots"></span><span class="menu-item__price">$5.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Sapporo</span><span class="menu-item__dots"></span><span class="menu-item__price">$5.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">FINI Pinot Grigio</span><span class="menu-item__dots"></span><span class="menu-item__price">$9.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Brown Heritage Cab</span><span class="menu-item__dots"></span><span class="menu-item__price">$9.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Lychee Mojito</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.00</span></div></div>
+      <div class="menu-item"><div class="menu-item__photo menu-item__photo--empty"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="menu-item__info"><span class="menu-item__name">Lemon Drop</span><span class="menu-item__dots"></span><span class="menu-item__price">$10.00</span></div></div>
+</div>
+    </section>
 
     <!-- TEA -->
     <section class="menu-category reveal" id="tea">
@@ -1887,6 +2030,22 @@ window.addEventListener('scroll', function() {
     ticking = true;
   }
 }, { passive: true });
+
+// Happy Hour sticky pill
+(function() {
+  var section = document.getElementById('happy-hour');
+  var pill = document.getElementById('happyHourSticky');
+  if (!section || !pill) return;
+  var banner = section.querySelector('.happy-hour-banner');
+
+  window.addEventListener('scroll', function() {
+    var rect = section.getBoundingClientRect();
+    var bannerRect = banner.getBoundingClientRect();
+    // Show pill when banner scrolls out of view but section is still visible
+    var show = bannerRect.bottom < 0 && rect.bottom > 100;
+    pill.classList.toggle('is-visible', show);
+  }, { passive: true });
+})();
 </script>
 
 </body>
