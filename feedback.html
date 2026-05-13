@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback — Mr. Dim Sum | Tukwila, WA</title>
+<meta name="description" content="Share your dining experience at Mr. Dim Sum. Your honest feedback helps us improve — every comment is read by our team.">
+<meta property="og:title" content="Feedback — Mr. Dim Sum | Tukwila, WA">
+<meta property="og:description" content="Tell us about your visit. Your feedback stays private and goes directly to our team.">
+<meta property="og:image" content="pictures/dimsumpshoped.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Gowun+Batang:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red: #C41E24;
+  --red-dark: #9E181D;
+  --gold: #d5b686;
+  --gold-dark: #b89b6a;
+  --gold-light: #F5E6C4;
+  --warm-bg: #FFFCF3;
+  --warm-bg-alt: #FFF8E8;
+  --charcoal: #1A1A1A;
+  --brown: #3D2B1F;
+  --brown-light: #5C4033;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-200: #E5E7EB;
+  --white: #FFFFFF;
+  --font-display: 'Italiana', serif;
+  --font-body: 'Gowun Batang', Georgia, serif;
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+  --nav-height: 76px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::selection { background: var(--gold); color: var(--brown); }
+::-moz-selection { background: var(--gold); color: var(--brown); }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--warm-bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* REVEAL ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,252,243,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  animation: navFadeIn 0.8s ease both;
+}
+
+.nav__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--nav-height);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nav__links-left,
+.nav__links-right {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+.nav__links-left { justify-content: flex-end; }
+.nav__links-right { justify-content: flex-start; }
+
+.nav__links-left a,
+.nav__links-right a {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--brown);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s, opacity 0.3s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav__links-left a::after,
+.nav__links-right a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.4s var(--ease-out-expo);
+}
+.nav__links-left a:hover::after,
+.nav__links-right a:hover::after {
+  width: 100%;
+}
+.nav__links-left a:hover,
+.nav__links-right a:hover { opacity: 0.7; }
+
+.nav__links-left a.is-active,
+.nav__links-right a.is-active {
+  color: var(--brown);
+}
+.nav__links-left a.is-active::after,
+.nav__links-right a.is-active::after {
+  width: 100%;
+}
+
+.nav__logo {
+  justify-self: center;
+  padding: 0 28px;
+}
+.nav__logo-img {
+  height: 38px;
+  width: auto;
+}
+
+/* HAMBURGER */
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  justify-self: end;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav__hamburger-lines {
+  width: 22px;
+  height: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav__hamburger-lines span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.4s var(--ease-out-expo), opacity 0.3s ease;
+  transform-origin: center;
+}
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(2) { opacity: 0; }
+.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* MOBILE MENU */
+.nav__mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,26,26,0.6);
+  z-index: 98;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.nav__mobile-overlay.is-open { display: block; opacity: 1; }
+
+.nav__mobile-menu {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: var(--warm-bg);
+  z-index: 99;
+  padding: 100px 40px 40px;
+  transform: translateX(100%);
+  transition: transform 0.5s var(--ease-out-expo);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+  overflow-y: auto;
+}
+.nav__mobile-menu.is-open { transform: translateX(0); }
+.nav__mobile-menu a {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--brown);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+  transition: color 0.3s, padding-left 0.3s;
+  min-height: 44px;
+}
+.nav__mobile-menu a:hover, .nav__mobile-menu a:active {
+  color: var(--red);
+  padding-left: 12px;
+}
+.nav__mobile-menu a.is-active {
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .nav__inner {
+    grid-template-columns: 1fr auto auto;
+    height: 64px;
+  }
+  .nav__links-left, .nav__links-right { display: none; }
+  .nav__logo { justify-self: start; padding: 0; }
+  .nav__hamburger { display: flex; }
+  .nav__logo-img { height: 32px; }
+}
+
+/* BTN */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 16px 40px;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.4s var(--ease-out-expo);
+  min-height: 44px;
+  position: relative;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--brown);
+  font-weight: 700;
+}
+.btn--gold:hover {
+  background: var(--gold-dark);
+  box-shadow: 0 4px 20px rgba(213,182,134,0.35);
+  transform: translateY(-2px);
+}
+
+/* SECTION SHARED */
+.section { padding: 88px 0; }
+.section--alt { background: var(--warm-bg-alt); }
+
+.section__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 52px;
+}
+
+.section__label {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 12px;
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  color: var(--brown);
+  letter-spacing: 0.02em;
+}
+
+.section__desc {
+  font-family: var(--font-body);
+  color: var(--gray-500);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* DECORATIVE DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 20px;
+  width: 120px;
+}
+.divider__line {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+}
+.divider__diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* HERO BANNER */
+.hero-banner {
+  background: var(--brown);
+  padding: 80px 20px;
+  text-align: center;
+}
+.hero-banner .section__label {
+  color: var(--gold);
+}
+.hero-banner .divider__line {
+  background: var(--gold);
+}
+.hero-banner .divider__diamond {
+  background: var(--gold);
+}
+.hero-banner h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+  animation: fadeUp 1s ease 0.2s both;
+}
+.hero-banner__sub {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  animation: fadeUp 1s ease 0.4s both;
+}
+
+/* FEEDBACK FORM */
+.feedback-wrapper {
+  max-width: 680px;
+  margin: -48px auto 0;
+  position: relative;
+  z-index: 5;
+}
+
+.feedback-card {
+  background: var(--white);
+  border: 1px solid rgba(213,182,134,0.3);
+  border-radius: 12px;
+  padding: 48px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+}
+
+.feedback-card__intro {
+  text-align: center;
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(213,182,134,0.2);
+}
+.feedback-card__intro h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--brown);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+.feedback-card__intro p {
+  font-family: var(--font-body);
+  color: var(--gray-500);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+.form-group label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--charcoal);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  -webkit-appearance: none;
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(213,182,134,0.15);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray-500);
+  opacity: 0.7;
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* STAR RATING */
+.star-rating {
+  display: flex;
+  gap: 6px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.star-rating input {
+  display: none;
+}
+.star-rating label {
+  cursor: pointer;
+  font-size: 0;
+  padding: 2px;
+  transition: transform 0.2s ease;
+}
+.star-rating label:hover {
+  transform: scale(1.15);
+}
+.star-rating label svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--gray-300);
+  transition: fill 0.2s ease;
+}
+.star-rating input:checked ~ label svg,
+.star-rating label:hover svg,
+.star-rating label:hover ~ label svg {
+  fill: var(--gold);
+}
+.star-rating-label {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brown);
+  margin-bottom: 10px;
+  display: block;
+}
+.star-rating-hint {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  margin-top: 6px;
+  min-height: 20px;
+}
+
+/* CATEGORY RATINGS */
+.category-ratings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.category-rating {
+  background: var(--warm-bg);
+  border: 1px solid rgba(213,182,134,0.15);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+.category-rating:hover {
+  border-color: var(--gold);
+}
+.category-rating__name {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+.category-rating .star-rating {
+  justify-content: center;
+}
+.category-rating .star-rating label svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* RECOMMEND TOGGLE */
+.recommend-options {
+  display: flex;
+  gap: 12px;
+}
+.recommend-option {
+  flex: 1;
+  position: relative;
+}
+.recommend-option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.recommend-option label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--brown);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all 0.3s ease;
+  min-height: 44px;
+}
+.recommend-option label svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.recommend-option input:checked + label {
+  border-color: var(--gold);
+  background: rgba(213,182,134,0.1);
+  color: var(--brown);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+.recommend-option input:focus-visible + label {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.recommend-option label:hover {
+  border-color: var(--gold);
+  background: rgba(213,182,134,0.05);
+}
+
+/* ANONYMOUS NOTE */
+.anonymous-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--warm-bg-alt);
+  border-radius: 6px;
+  margin-bottom: 28px;
+}
+.anonymous-note svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--gold-dark);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.anonymous-note span {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--brown-light);
+  line-height: 1.5;
+}
+
+/* SUBMIT */
+.feedback-card .btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* SUCCESS STATE */
+.feedback-success {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+}
+.feedback-success.is-visible {
+  display: block;
+  animation: fadeUp 0.6s ease both;
+}
+.feedback-success__icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(213,182,134,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+.feedback-success__icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--gold-dark);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.feedback-success h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--brown);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+.feedback-success p {
+  font-family: var(--font-body);
+  color: var(--gray-500);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* WHY SECTION */
+.why-feedback {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.why-feedback__item {
+  text-align: center;
+  padding: 32px 20px;
+}
+.why-feedback__icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(213,182,134,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.why-feedback__icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--gold-dark);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.why-feedback__title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  color: var(--brown);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+.why-feedback__desc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.7);
+  padding: 64px 0 32px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer__brand-logo {
+  height: 32px;
+  width: auto;
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+}
+.footer__brand p {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  max-width: 280px;
+}
+
+.footer h4 {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 10px; }
+.footer a {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+  position: relative;
+}
+.footer a:hover { color: var(--white); }
+
+.footer__grid a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.footer__grid a:hover::after { width: 100%; }
+
+.footer address {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8125rem;
+}
+
+.footer__socials { display: flex; gap: 16px; }
+.footer__socials a {
+  display: flex;
+  padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.footer__socials a:hover { transform: translateY(-2px); }
+.footer__socials a::after { display: none; }
+.footer__socials svg { width: 20px; height: 20px; fill: rgba(255,255,255,0.5); transition: fill 0.2s; }
+.footer__socials a:hover svg { fill: var(--white); }
+
+@media (max-width: 768px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+  .footer__socials { justify-content: center; }
+}
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--brown);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, background 0.2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  -webkit-tap-highlight-color: transparent;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover { background: var(--red); }
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .section__header { margin-bottom: 40px; }
+  .section__title { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+  .section__desc { font-size: 1rem; }
+  .hero-banner { padding: 60px 20px 80px; }
+  .feedback-card { padding: 32px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .category-ratings { grid-template-columns: 1fr 1fr; }
+  .why-feedback { grid-template-columns: 1fr; gap: 8px; }
+  .why-feedback__item { padding: 24px 20px; }
+  .back-to-top {
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-card { padding: 24px 20px; }
+  .category-ratings { grid-template-columns: 1fr; }
+  .recommend-options { flex-direction: column; }
+}
+
+/* UTILITY */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <ul class="nav__links-left">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="index.html" class="nav__logo" aria-label="Mr. Dim Sum — Home">
+      <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="nav__logo-img">
+    </a>
+    <ul class="nav__links-right">
+      <li><a href="reservations.html">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">
+      <div class="nav__hamburger-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+<div class="nav__mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="menu.html" onclick="closeMenu()">Menu</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="reservations.html" onclick="closeMenu()">Reservations</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+  <a href="feedback.html" class="is-active" onclick="closeMenu()">Feedback</a>
+</div>
+
+<!-- HERO BANNER -->
+<section class="hero-banner">
+  <p class="section__label" style="animation: fadeUp 1s ease both;">PRIVATE FEEDBACK</p>
+  <div class="divider" style="animation: fadeUp 1s ease 0.1s both;"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
+  <h1>Tell Us How We Did</h1>
+  <p class="hero-banner__sub">Your honest feedback goes directly to our team — never posted publicly</p>
+</section>
+
+<!-- FEEDBACK FORM -->
+<section class="section">
+  <div class="container">
+    <div class="feedback-wrapper reveal">
+      <div class="feedback-card" id="feedbackCard">
+
+        <div class="feedback-card__intro">
+          <h2>Share Your Experience</h2>
+          <p>Every response is read by our team. Be as honest as you'd like — this is how we get better.</p>
+        </div>
+
+        <form id="feedbackForm">
+          <!-- Overall Rating -->
+          <div class="form-group">
+            <span class="star-rating-label">Overall Experience *</span>
+            <div class="star-rating" id="overallRating">
+              <input type="radio" id="star5" name="overall" value="5" required>
+              <label for="star5" aria-label="5 stars — Exceptional">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </label>
+              <input type="radio" id="star4" name="overall" value="4">
+              <label for="star4" aria-label="4 stars — Great">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </label>
+              <input type="radio" id="star3" name="overall" value="3">
+              <label for="star3" aria-label="3 stars — Good">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </label>
+              <input type="radio" id="star2" name="overall" value="2">
+              <label for="star2" aria-label="2 stars — Fair">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </label>
+              <input type="radio" id="star1" name="overall" value="1">
+              <label for="star1" aria-label="1 star — Poor">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </label>
+            </div>
+            <div class="star-rating-hint" id="ratingHint"></div>
+          </div>
+
+          <!-- Category Ratings -->
+          <div class="form-group">
+            <span class="star-rating-label">Rate Each Area</span>
+            <div class="category-ratings">
+              <div class="category-rating">
+                <div class="category-rating__name">Food Quality</div>
+                <div class="star-rating" id="foodRating">
+                  <input type="radio" id="food5" name="food" value="5"><label for="food5" aria-label="Food 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="food4" name="food" value="4"><label for="food4" aria-label="Food 4 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="food3" name="food" value="3"><label for="food3" aria-label="Food 3 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="food2" name="food" value="2"><label for="food2" aria-label="Food 2 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="food1" name="food" value="1"><label for="food1" aria-label="Food 1 star"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                </div>
+              </div>
+              <div class="category-rating">
+                <div class="category-rating__name">Service</div>
+                <div class="star-rating" id="serviceRating">
+                  <input type="radio" id="svc5" name="service" value="5"><label for="svc5" aria-label="Service 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="svc4" name="service" value="4"><label for="svc4" aria-label="Service 4 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="svc3" name="service" value="3"><label for="svc3" aria-label="Service 3 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="svc2" name="service" value="2"><label for="svc2" aria-label="Service 2 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="svc1" name="service" value="1"><label for="svc1" aria-label="Service 1 star"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                </div>
+              </div>
+              <div class="category-rating">
+                <div class="category-rating__name">Cleanliness</div>
+                <div class="star-rating" id="cleanRating">
+                  <input type="radio" id="cln5" name="cleanliness" value="5"><label for="cln5" aria-label="Cleanliness 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="cln4" name="cleanliness" value="4"><label for="cln4" aria-label="Cleanliness 4 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="cln3" name="cleanliness" value="3"><label for="cln3" aria-label="Cleanliness 3 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="cln2" name="cleanliness" value="2"><label for="cln2" aria-label="Cleanliness 2 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="cln1" name="cleanliness" value="1"><label for="cln1" aria-label="Cleanliness 1 star"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                </div>
+              </div>
+              <div class="category-rating">
+                <div class="category-rating__name">Atmosphere</div>
+                <div class="star-rating" id="ambianceRating">
+                  <input type="radio" id="amb5" name="ambiance" value="5"><label for="amb5" aria-label="Atmosphere 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="amb4" name="ambiance" value="4"><label for="amb4" aria-label="Atmosphere 4 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="amb3" name="ambiance" value="3"><label for="amb3" aria-label="Atmosphere 3 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="amb2" name="ambiance" value="2"><label for="amb2" aria-label="Atmosphere 2 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                  <input type="radio" id="amb1" name="ambiance" value="1"><label for="amb1" aria-label="Atmosphere 1 star"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visit Details -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="visitDate">Date of Visit</label>
+              <input type="date" id="visitDate" name="visit_date">
+            </div>
+            <div class="form-group">
+              <label for="diningType">Dining Type</label>
+              <select id="diningType" name="dining_type">
+                <option value="" disabled selected>Select one</option>
+                <option value="dine-in">Dine In</option>
+                <option value="takeout">Takeout</option>
+                <option value="catering">Catering</option>
+                <option value="private-event">Private Event</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- What did you order -->
+          <div class="form-group">
+            <label for="ordered">What Did You Order?</label>
+            <input type="text" id="ordered" name="ordered" placeholder="e.g. Har Gow, Siu Mai, Beef Chow Fun...">
+          </div>
+
+          <!-- Detailed Feedback -->
+          <div class="form-group">
+            <label for="feedbackText">Your Feedback *</label>
+            <textarea id="feedbackText" name="feedback" required placeholder="What did you love? What could we improve? Be specific — we read every word."></textarea>
+          </div>
+
+          <!-- Would you recommend -->
+          <div class="form-group">
+            <span class="star-rating-label">Would You Recommend Us?</span>
+            <div class="recommend-options">
+              <div class="recommend-option">
+                <input type="radio" id="recYes" name="recommend" value="yes">
+                <label for="recYes">
+                  <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                  Yes
+                </label>
+              </div>
+              <div class="recommend-option">
+                <input type="radio" id="recMaybe" name="recommend" value="maybe">
+                <label for="recMaybe">
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg>
+                  Maybe
+                </label>
+              </div>
+              <div class="recommend-option">
+                <input type="radio" id="recNo" name="recommend" value="no">
+                <label for="recNo">
+                  <svg viewBox="0 0 24 24"><path d="M10 15V19a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Name & Email (optional) -->
+          <div class="form-row" style="margin-top:32px;">
+            <div class="form-group">
+              <label for="feedbackName">Name <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gray-500);">(optional)</span></label>
+              <input type="text" id="feedbackName" name="name" placeholder="Anonymous is fine">
+            </div>
+            <div class="form-group">
+              <label for="feedbackEmail">Email <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--gray-500);">(if you want a reply)</span></label>
+              <input type="email" id="feedbackEmail" name="email" placeholder="your@email.com">
+            </div>
+          </div>
+
+          <div class="anonymous-note">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Your feedback is 100% private. It goes directly to our management team and is never shared publicly.</span>
+          </div>
+
+          <button type="submit" class="btn btn--gold" id="submitBtn">Submit Feedback</button>
+        </form>
+
+        <!-- Success Message -->
+        <div class="feedback-success" id="feedbackSuccess">
+          <div class="feedback-success__icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Thank You</h3>
+          <p>Your feedback has been sent to our team. We appreciate you taking the time to help us improve.</p>
+          <button class="btn btn--gold" style="margin-top:32px;" onclick="resetForm()">Submit Another</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY FEEDBACK -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header reveal">
+      <p class="section__label">WHY YOUR VOICE MATTERS</p>
+      <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
+      <h2 class="section__title">We're Listening</h2>
+      <p class="section__desc">Every piece of feedback shapes how we cook, serve, and welcome you.</p>
+    </div>
+    <div class="why-feedback">
+      <div class="why-feedback__item reveal reveal-delay-1">
+        <div class="why-feedback__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 class="why-feedback__title">Direct to Our Team</h3>
+        <p class="why-feedback__desc">Every submission is read by management — not buried in a public review platform.</p>
+      </div>
+      <div class="why-feedback__item reveal reveal-delay-2">
+        <div class="why-feedback__icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3 class="why-feedback__title">Honest & Judgment-Free</h3>
+        <p class="why-feedback__desc">No public posting. Be candid about what worked and what didn't.</p>
+      </div>
+      <div class="why-feedback__item reveal reveal-delay-3">
+        <div class="why-feedback__icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="why-feedback__title">Real Changes Made</h3>
+        <p class="why-feedback__desc">Your input has led to menu updates, service improvements, and new dishes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="footer__brand-logo">
+        <p>More than dim sum — it's a way of life. Handmade Cantonese dim sum served all day at Westfield Southcenter Mall.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li><a href="contact.html">Mon&ndash;Sat: 10am&ndash;9pm</a></li>
+          <li><a href="contact.html">Sunday: 10am&ndash;8pm</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">Contact</h4>
+        <ul>
+          <li><a href="mailto:info@mrdimsumusa.com">info@mrdimsumusa.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <address>
+          973 Southcenter Mall<br>
+          Tukwila, WA 98188
+        </address>
+        <p style="margin-top:12px;font-size:0.875rem"><a href="https://maps.google.com/?q=973+Southcenter+Mall+Tukwila+WA+98188" target="_blank" rel="noopener">Get Directions</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Mr. Dim Sum. All rights reserved.</span>
+      <div class="footer__socials">
+        <a href="https://instagram.com/mrdimsumusa" target="_blank" rel="noopener" aria-label="Follow Mr. Dim Sum on Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="mailto:info@mrdimsumusa.com" aria-label="Email Mr. Dim Sum">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+// Mobile menu
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+  const btn = document.querySelector('.nav__hamburger');
+  const isOpen = menu.classList.contains('is-open');
+  if (isOpen) {
+    closeMenu();
+  } else {
+    menu.classList.add('is-open');
+    overlay.classList.add('is-open');
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Close menu');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileOverlay');
+  const btn = document.querySelector('.nav__hamburger');
+  menu.classList.remove('is-open');
+  overlay.classList.remove('is-open');
+  btn.classList.remove('is-active');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Open menu');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMenu();
+});
+
+// Star rating hints
+const ratingHints = {
+  1: 'Poor — we need to do better',
+  2: 'Fair — room for improvement',
+  3: 'Good — a solid experience',
+  4: 'Great — above expectations',
+  5: 'Exceptional — we nailed it'
+};
+
+document.querySelectorAll('#overallRating input').forEach(input => {
+  input.addEventListener('change', function() {
+    document.getElementById('ratingHint').textContent = ratingHints[this.value] || '';
+  });
+});
+
+// Form submission
+document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Collect form data
+  const formData = new FormData(this);
+  const data = {};
+  for (const [key, value] of formData.entries()) {
+    data[key] = value;
+  }
+
+  // Build email body
+  const lines = [];
+  lines.push('=== MR. DIM SUM — CUSTOMER FEEDBACK ===');
+  lines.push('');
+  if (data.overall) lines.push('Overall Rating: ' + '★'.repeat(data.overall) + '☆'.repeat(5 - data.overall) + ' (' + data.overall + '/5)');
+  if (data.food) lines.push('Food Quality: ' + '★'.repeat(data.food) + '☆'.repeat(5 - data.food));
+  if (data.service) lines.push('Service: ' + '★'.repeat(data.service) + '☆'.repeat(5 - data.service));
+  if (data.cleanliness) lines.push('Cleanliness: ' + '★'.repeat(data.cleanliness) + '☆'.repeat(5 - data.cleanliness));
+  if (data.ambiance) lines.push('Atmosphere: ' + '★'.repeat(data.ambiance) + '☆'.repeat(5 - data.ambiance));
+  lines.push('');
+  if (data.visit_date) lines.push('Visit Date: ' + data.visit_date);
+  if (data.dining_type) lines.push('Dining Type: ' + data.dining_type);
+  if (data.ordered) lines.push('Ordered: ' + data.ordered);
+  if (data.recommend) lines.push('Would Recommend: ' + data.recommend);
+  lines.push('');
+  lines.push('--- FEEDBACK ---');
+  lines.push(data.feedback || '');
+  lines.push('');
+  if (data.name) lines.push('Name: ' + data.name);
+  if (data.email) lines.push('Email: ' + data.email);
+  lines.push('');
+  lines.push('Submitted: ' + new Date().toLocaleString());
+
+  const subject = 'Customer Feedback' + (data.overall ? ' (' + data.overall + '/5 stars)' : '');
+  const body = encodeURIComponent(lines.join('\n'));
+
+  // Open mailto
+  window.location.href = 'mailto:info@mrdimsumusa.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+
+  // Show success
+  setTimeout(function() {
+    document.getElementById('feedbackForm').style.display = 'none';
+    document.querySelector('.feedback-card__intro').style.display = 'none';
+    document.getElementById('feedbackSuccess').classList.add('is-visible');
+  }, 500);
+});
+
+function resetForm() {
+  document.getElementById('feedbackForm').reset();
+  document.getElementById('feedbackForm').style.display = '';
+  document.querySelector('.feedback-card__intro').style.display = '';
+  document.getElementById('feedbackSuccess').classList.remove('is-visible');
+  document.getElementById('ratingHint').textContent = '';
+}
+
+// Scroll-triggered reveal animations
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 80px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('is-visible'));
+}
+
+function revealFallback() {
+  revealEls.forEach(el => {
+    if (!el.classList.contains('is-visible')) {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 80) el.classList.add('is-visible');
+    }
+  });
+}
+window.addEventListener('scroll', revealFallback, { passive: true });
+revealFallback();
+
+// Back to top button
+const backToTopBtn = document.getElementById('backToTop');
+let ticking = false;
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      backToTopBtn.classList.toggle('is-visible', window.scrollY > 500);
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+</script>
+
+</body>
+</html>
