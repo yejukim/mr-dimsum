@@ -1156,12 +1156,80 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .back-to-top { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); right: 20px; }
 }
 
+/* ============================================
+   MOBILE MENU REDESIGN — dense grid, signature banners, beverage rows
+   ============================================ */
+@media (max-width: 768px) {
+  .menu-items-grid { grid-template-columns: repeat(2, 1fr); gap: 16px 12px; }
+
+  /* Photo-forward cards: drop the card box, let the food carry it */
+  .menu-item,
+  .menu-category--happy-hour .menu-item {
+    background: transparent; border: none; border-radius: 0;
+    box-shadow: none; overflow: visible;
+  }
+  .menu-item:hover { transform: none; box-shadow: none; }
+  .menu-item:hover .menu-item__photo img { transform: none; }
+  .menu-item__photo { border-radius: 11px; }
+  .menu-item__info { padding: 7px 2px 0; gap: 1px; }
+  .menu-item__name {
+    font-size: 0.85rem; line-height: 1.25;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .menu-item__desc { display: none; }
+  .menu-item__price { font-size: 0.8rem; margin-top: 1px; }
+
+  /* Dietary badges lifted onto the photo corner so the name clamps cleanly */
+  .menu-items-grid:not(.is-beverage) .menu-item { position: relative; }
+  .menu-items-grid:not(.is-beverage) .menu-item:not(.is-hero) .menu-item__tags {
+    position: absolute; top: 8px; left: 8px; margin: 0; z-index: 2;
+  }
+  .menu-items-grid:not(.is-beverage) .menu-item:not(.is-hero) .tag {
+    box-shadow: 0 0 0 1.5px rgba(255, 252, 243, 0.6);
+  }
+
+  /* Signature banner — first photographed dish of each category spans both columns */
+  .menu-item.is-hero { grid-column: 1 / -1; position: relative; }
+  .menu-item.is-hero .menu-item__photo { aspect-ratio: 16 / 9; border-radius: 13px; }
+  .menu-item.is-hero .menu-item__photo::after {
+    content: 'Signature'; position: absolute; top: 10px; left: 10px;
+    background: var(--gold); color: var(--brown);
+    font-family: var(--font-ui); font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.13em; text-transform: uppercase; padding: 4px 9px; border-radius: 11px;
+  }
+  .menu-item.is-hero .menu-item__info {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    flex-direction: row; align-items: flex-end; justify-content: space-between;
+    gap: 10px; padding: 12px 14px; background: rgba(36, 25, 14, 0.6);
+  }
+  .menu-item.is-hero .menu-item__name {
+    font-family: var(--font-display); font-size: 1.05rem; color: #fff; -webkit-line-clamp: 2;
+  }
+  .menu-item.is-hero .menu-item__price { color: #fff; font-size: 0.85rem; margin-top: 0; }
+
+  /* Beverage page — fully photoless categories become dotted-leader rows */
+  .menu-items-grid.is-beverage { display: block; }
+  .is-beverage .menu-item {
+    display: flex; align-items: baseline; gap: 8px;
+    padding: 11px 2px; border-bottom: 1px solid rgba(213, 182, 134, 0.28);
+  }
+  .is-beverage .menu-item__photo { display: none; }
+  .is-beverage .menu-item__info {
+    flex-direction: row; align-items: baseline; width: 100%; padding: 0; gap: 8px;
+  }
+  .is-beverage .menu-item__name {
+    flex: 0 0 auto; font-family: var(--font-body); font-size: 0.9rem;
+    display: inline; overflow: visible;
+  }
+  .is-beverage .menu-item__dots {
+    display: block; flex: 1 1 auto; align-self: center;
+    border-bottom: 1.5px dotted var(--gold);
+  }
+  .is-beverage .menu-item__price { flex: 0 0 auto; margin-top: 0; }
+}
+
 @media (max-width: 480px) {
   .footer__grid { grid-template-columns: 1fr; gap: 28px; }
-  .menu-items-grid { grid-template-columns: 1fr; gap: 12px; }
-  .menu-item { display: grid; grid-template-columns: 120px 1fr; }
-  .menu-item__photo { aspect-ratio: 1; }
-  .menu-item__info { padding: 12px 14px; justify-content: center; }
 }
 
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
@@ -2045,6 +2113,23 @@ window.addEventListener('scroll', function() {
     var show = bannerRect.bottom < 0 && rect.bottom > 100;
     pill.classList.toggle('is-visible', show);
   }, { passive: true });
+})();
+
+// Mobile menu: signature banner per category + beverage-row treatment for photoless categories
+(function() {
+  document.querySelectorAll('.menu-items-grid').forEach(function(grid) {
+    if (!grid.querySelector('.menu-item__photo img')) {
+      grid.classList.add('is-beverage');
+      return;
+    }
+    var items = grid.querySelectorAll('.menu-item');
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].querySelector('.menu-item__photo img')) {
+        items[i].classList.add('is-hero');
+        break;
+      }
+    }
+  });
 })();
 </script>
 
