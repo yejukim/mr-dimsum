@@ -3,362 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feedback — Mr. Dim Sum | Tukwila, WA</title>
-<meta name="description" content="Share your dining experience at Mr. Dim Sum. Your honest feedback helps us improve — every comment is read by our team.">
-<meta property="og:title" content="Feedback — Mr. Dim Sum | Tukwila, WA">
+<title>Feedback | Mr. Dim Sum | Tukwila, WA</title>
+<meta name="description" content="Share your dining experience at Mr. Dim Sum. Your honest feedback helps us improve, every comment is read by our team.">
+<meta property="og:title" content="Feedback | Mr. Dim Sum | Tukwila, WA">
 <meta property="og:description" content="Tell us about your visit. Your feedback stays private and goes directly to our team.">
 <meta property="og:image" content="pictures/dimsumpshoped.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Gowun+Batang:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italianno&family=Gowun+Batang:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --red: #C41E24;
-  --red-dark: #9E181D;
-  --gold: #d5b686;
-  --gold-dark: #b89b6a;
-  --gold-light: #F5E6C4;
-  --warm-bg: #FFFCF3;
-  --warm-bg-alt: #FFF8E8;
-  --charcoal: #1A1A1A;
-  --brown: #3D2B1F;
-  --brown-light: #5C4033;
-  --gray-700: #374151;
-  --gray-500: #6B7280;
-  --gray-300: #D1D5DB;
-  --gray-200: #E5E7EB;
-  --white: #FFFFFF;
-  --font-display: 'Italiana', serif;
-  --font-body: 'Gowun Batang', Georgia, serif;
-  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
-  --nav-height: 76px;
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-::selection { background: var(--gold); color: var(--brown); }
-::-moz-selection { background: var(--gold); color: var(--brown); }
-
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-
-body {
-  font-family: var(--font-body);
-  color: var(--charcoal);
-  background: var(--warm-bg);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-img { max-width: 100%; height: auto; display: block; }
-a { text-decoration: none; color: inherit; }
-
-a:focus-visible,
-button:focus-visible,
-.btn:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-@keyframes navFadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* REVEAL ANIMATIONS */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* NAV */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255,252,243,0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(213,182,134,0.2);
-  animation: navFadeIn 0.8s ease both;
-}
-
-.nav__inner {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  height: var(--nav-height);
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.nav__links-left,
-.nav__links-right {
-  display: flex;
-  list-style: none;
-  gap: 32px;
-}
-.nav__links-left { justify-content: flex-end; }
-.nav__links-right { justify-content: flex-start; }
-
-.nav__links-left a,
-.nav__links-right a {
-  font-family: var(--font-ui);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--brown);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.3s, opacity 0.3s;
-  position: relative;
-  padding-bottom: 2px;
-}
-.nav__links-left a::after,
-.nav__links-right a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.4s var(--ease-out-expo);
-}
-.nav__links-left a:hover::after,
-.nav__links-right a:hover::after {
-  width: 100%;
-}
-.nav__links-left a:hover,
-.nav__links-right a:hover { opacity: 0.7; }
-
-.nav__links-left a.is-active,
-.nav__links-right a.is-active {
-  color: var(--brown);
-}
-.nav__links-left a.is-active::after,
-.nav__links-right a.is-active::after {
-  width: 100%;
-}
-
-.nav__logo {
-  justify-self: center;
-  padding: 0 28px;
-}
-.nav__logo-img {
-  height: 38px;
-  width: auto;
-}
-
-/* HAMBURGER */
-.nav__hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  justify-self: end;
-  min-width: 44px;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-  -webkit-tap-highlight-color: transparent;
-}
-.nav__hamburger-lines {
-  width: 22px;
-  height: 16px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.nav__hamburger-lines span {
-  display: block;
-  width: 100%;
-  height: 1.5px;
-  background: var(--brown);
-  border-radius: 2px;
-  transition: transform 0.4s var(--ease-out-expo), opacity 0.3s ease;
-  transform-origin: center;
-}
-.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(2) { opacity: 0; }
-.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* MOBILE MENU */
-.nav__mobile-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(26,26,26,0.6);
-  z-index: 98;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.nav__mobile-overlay.is-open { display: block; opacity: 1; }
-
-.nav__mobile-menu {
-  position: fixed;
-  top: 0; right: 0; bottom: 0;
-  width: 320px;
-  max-width: 85vw;
-  background: var(--warm-bg);
-  z-index: 99;
-  padding: 100px 40px 40px;
-  transform: translateX(100%);
-  transition: transform 0.5s var(--ease-out-expo);
-  display: flex;
-  flex-direction: column;
-  box-shadow: -8px 0 40px rgba(0,0,0,0.15);
-  overflow-y: auto;
-}
-.nav__mobile-menu.is-open { transform: translateX(0); }
-.nav__mobile-menu a {
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--brown);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-bottom: 1px solid rgba(213,182,134,0.2);
-  transition: color 0.3s, padding-left 0.3s;
-  min-height: 44px;
-}
-.nav__mobile-menu a:hover, .nav__mobile-menu a:active {
-  color: var(--red);
-  padding-left: 12px;
-}
-.nav__mobile-menu a.is-active {
-  color: var(--red);
-}
-
-@media (max-width: 768px) {
-  .nav__inner {
-    grid-template-columns: 1fr auto auto;
-    height: 64px;
-  }
-  .nav__links-left, .nav__links-right { display: none; }
-  .nav__logo { justify-self: start; padding: 0; }
-  .nav__hamburger { display: flex; }
-  .nav__logo-img { height: 32px; }
-}
-
-/* BTN */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-ui);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  padding: 16px 40px;
-  border-radius: 0;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: all 0.4s var(--ease-out-expo);
-  min-height: 44px;
-  position: relative;
-}
-.btn:active { transform: scale(0.97); }
-
-.btn--gold {
-  background: var(--gold);
-  color: var(--brown);
-  font-weight: 700;
-}
-.btn--gold:hover {
-  background: var(--gold-dark);
-  box-shadow: 0 4px 20px rgba(213,182,134,0.35);
-  transform: translateY(-2px);
-}
-
-/* SECTION SHARED */
-.section { padding: 88px 0; }
-.section--alt { background: var(--warm-bg-alt); }
-
-.section__header {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 52px;
-}
-
-.section__label {
-  font-family: var(--font-ui);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold-dark);
-  margin-bottom: 12px;
-}
-
-.section__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  margin-bottom: 16px;
-  line-height: 1.2;
-  color: var(--brown);
-  letter-spacing: 0.02em;
-}
-
-.section__desc {
-  font-family: var(--font-body);
-  color: var(--gray-500);
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-/* DECORATIVE DIVIDER */
-.divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 0 auto 20px;
-  width: 120px;
-}
-.divider__line {
-  flex: 1;
-  height: 1px;
-  background: var(--gold);
-}
-.divider__diamond {
-  width: 8px;
-  height: 8px;
-  background: var(--gold);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-  animation: float 4s ease-in-out infinite;
-}
 
 /* HERO BANNER */
 .hero-banner {
@@ -376,7 +32,7 @@ button:focus-visible,
   background: var(--gold);
 }
 .hero-banner h1 {
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 400;
   font-size: clamp(2.25rem, 5vw, 3.5rem);
   color: var(--white);
   line-height: 1.15;
@@ -401,7 +57,6 @@ button:focus-visible,
 
 .feedback-card {
   background: var(--white);
-  border: 1px solid rgba(213,182,134,0.3);
   border-radius: 12px;
   padding: 48px;
   box-shadow: 0 4px 32px rgba(0,0,0,0.06);
@@ -411,10 +66,10 @@ button:focus-visible,
   text-align: center;
   margin-bottom: 36px;
   padding-bottom: 28px;
-  border-bottom: 1px solid rgba(213,182,134,0.2);
+  border-bottom: var(--hairline);
 }
 .feedback-card__intro h2 {
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 400;
   font-size: 1.5rem;
   color: var(--brown);
   margin-bottom: 8px;
@@ -424,7 +79,7 @@ button:focus-visible,
   font-family: var(--font-body);
   color: var(--gray-500);
   font-size: 0.9375rem;
-  line-height: 1.7;
+  line-height: 1.2;
 }
 
 .form-group {
@@ -444,9 +99,8 @@ button:focus-visible,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  border: 1px solid var(--gray-300);
-  background: var(--white);
-  border-radius: 6px;
+  background: var(--warm-bg-alt);
+  border-radius: 12px;
   padding: 14px 16px;
   font-family: var(--font-body);
   font-size: 1rem;
@@ -461,7 +115,7 @@ button:focus-visible,
   background-position: right 16px center;
   padding-right: 40px;
   cursor: pointer;
-}
+  background: var(--warm-bg-alt);}
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
@@ -476,7 +130,7 @@ button:focus-visible,
 .form-group textarea {
   resize: vertical;
   min-height: 120px;
-}
+  background: var(--warm-bg-alt);}
 
 .form-row {
   display: grid;
@@ -539,9 +193,8 @@ button:focus-visible,
   gap: 16px;
 }
 .category-rating {
-  background: var(--warm-bg);
-  border: 1px solid rgba(213,182,134,0.15);
-  border-radius: 8px;
+  background: var(--warm-bg-alt);
+  border-radius: 12px;
   padding: 16px;
   text-align: center;
   transition: border-color 0.3s ease;
@@ -587,8 +240,7 @@ button:focus-visible,
   justify-content: center;
   gap: 8px;
   padding: 14px 20px;
-  border: 1px solid var(--gray-300);
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
   font-family: var(--font-ui);
   font-size: 0.8125rem;
@@ -598,7 +250,7 @@ button:focus-visible,
   letter-spacing: 0.06em;
   transition: all 0.3s ease;
   min-height: 44px;
-}
+  background: var(--warm-bg-alt);}
 .recommend-option label svg {
   width: 18px;
   height: 18px;
@@ -630,7 +282,7 @@ button:focus-visible,
   gap: 10px;
   padding: 14px 16px;
   background: var(--warm-bg-alt);
-  border-radius: 6px;
+  border-radius: 12px;
   margin-bottom: 28px;
 }
 .anonymous-note svg {
@@ -647,7 +299,7 @@ button:focus-visible,
   font-family: var(--font-body);
   font-size: 0.875rem;
   color: var(--brown-light);
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /* SUBMIT */
@@ -687,7 +339,7 @@ button:focus-visible,
   stroke-linejoin: round;
 }
 .feedback-success h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 400;
   font-size: 1.75rem;
   color: var(--brown);
   margin-bottom: 12px;
@@ -697,7 +349,7 @@ button:focus-visible,
   font-family: var(--font-body);
   color: var(--gray-500);
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.2;
   max-width: 400px;
   margin: 0 auto;
 }
@@ -734,7 +386,7 @@ button:focus-visible,
   stroke-linejoin: round;
 }
 .why-feedback__title {
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 400;
   font-size: 1.125rem;
   color: var(--brown);
   margin-bottom: 8px;
@@ -744,159 +396,15 @@ button:focus-visible,
   font-family: var(--font-body);
   font-size: 0.9375rem;
   color: var(--gray-500);
-  line-height: 1.7;
+  line-height: 1.2;
 }
 
-/* FOOTER */
-.footer {
-  background: var(--charcoal);
-  color: rgba(255,255,255,0.7);
-  padding: 64px 0 32px;
-}
-
-.footer__grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 56px;
-}
-
-.footer__brand-logo {
-  height: 32px;
-  width: auto;
-  margin-bottom: 20px;
-  opacity: 0.9;
-  filter: brightness(0) invert(1);
-}
-.footer__brand p {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.55);
-  max-width: 280px;
-}
-
-.footer h4 {
-  color: var(--white);
-  font-family: var(--font-ui);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.footer ul { list-style: none; }
-.footer li { margin-bottom: 12px; }
-.footer a {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.5);
-  transition: color 0.3s;
-  position: relative;
-}
-.footer a:hover { color: var(--white); }
-
-.footer__grid a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.3s ease;
-}
-.footer__grid a:hover::after { width: 100%; }
-
-.footer address {
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 0.9375rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.5);
-}
-
-.footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.35);
-}
-
-.footer__socials { display: flex; gap: 16px; }
-.footer__socials a {
-  display: flex;
-  padding: 4px;
-  min-width: 44px;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-.footer__socials a:hover { transform: translateY(-2px); }
-.footer__socials a::after { display: none; }
-.footer__socials svg { width: 20px; height: 20px; fill: rgba(255,255,255,0.5); transition: fill 0.2s; }
-.footer__socials a:hover svg { fill: var(--white); }
-
-@media (max-width: 768px) {
-  .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .footer__bottom { flex-direction: column; text-align: center; }
-  .footer__socials { justify-content: center; }
-}
-@media (max-width: 480px) {
-  .footer__grid { grid-template-columns: 1fr; gap: 28px; }
-}
-
-/* BACK TO TOP */
-.back-to-top {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 90;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: var(--brown);
-  color: var(--white);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px);
-  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, background 0.2s;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  -webkit-tap-highlight-color: transparent;
-}
-.back-to-top.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.back-to-top:hover { background: var(--red); }
-.back-to-top svg {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
   .section__header { margin-bottom: 40px; }
-  .section__title { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+  .section__title { font-size: clamp(2.25rem, 7vw, 3.25rem); }
   .section__desc { font-size: 1rem; }
   .hero-banner { padding: 60px 20px 80px; }
   .feedback-card { padding: 32px 24px; }
@@ -916,15 +424,6 @@ button:focus-visible,
   .recommend-options { flex-direction: column; }
 }
 
-/* UTILITY */
-.sr-only {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
-}
 </style>
 </head>
 
@@ -938,7 +437,7 @@ button:focus-visible,
       <li><a href="menu.html">Menu</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
-    <a href="index.html" class="nav__logo" aria-label="Mr. Dim Sum — Home">
+    <a href="index.html" class="nav__logo" aria-label="Mr. Dim Sum, Home">
       <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="nav__logo-img">
     </a>
     <ul class="nav__links-right">
@@ -969,7 +468,7 @@ button:focus-visible,
   <p class="section__label" style="animation: fadeUp 1s ease both;">PRIVATE FEEDBACK</p>
   <div class="divider" style="animation: fadeUp 1s ease 0.1s both;"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
   <h1>Tell Us How We Did</h1>
-  <p class="hero-banner__sub">Your honest feedback goes directly to our team — never posted publicly</p>
+  <p class="hero-banner__sub">Your honest feedback goes directly to our team, never posted publicly</p>
 </section>
 
 <!-- FEEDBACK FORM -->
@@ -980,7 +479,7 @@ button:focus-visible,
 
         <div class="feedback-card__intro">
           <h2>Share Your Experience</h2>
-          <p>Every response is read by our team. Be as honest as you'd like — this is how we get better.</p>
+          <p>Every response is read by our team. Be as honest as you'd like. This is how we get better.</p>
         </div>
 
         <form id="feedbackForm">
@@ -989,23 +488,23 @@ button:focus-visible,
             <span class="star-rating-label">Overall Experience *</span>
             <div class="star-rating" id="overallRating">
               <input type="radio" id="star5" name="overall" value="5" required>
-              <label for="star5" aria-label="5 stars — Exceptional">
+              <label for="star5" aria-label="5 stars, Exceptional">
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </label>
               <input type="radio" id="star4" name="overall" value="4">
-              <label for="star4" aria-label="4 stars — Great">
+              <label for="star4" aria-label="4 stars, Great">
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </label>
               <input type="radio" id="star3" name="overall" value="3">
-              <label for="star3" aria-label="3 stars — Good">
+              <label for="star3" aria-label="3 stars, Good">
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </label>
               <input type="radio" id="star2" name="overall" value="2">
-              <label for="star2" aria-label="2 stars — Fair">
+              <label for="star2" aria-label="2 stars, Fair">
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </label>
               <input type="radio" id="star1" name="overall" value="1">
-              <label for="star1" aria-label="1 star — Poor">
+              <label for="star1" aria-label="1 star, Poor">
                 <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </label>
             </div>
@@ -1084,7 +583,7 @@ button:focus-visible,
           <!-- Detailed Feedback -->
           <div class="form-group">
             <label for="feedbackText">Your Feedback *</label>
-            <textarea id="feedbackText" name="feedback" required placeholder="What did you love? What could we improve? Be specific — we read every word."></textarea>
+            <textarea id="feedbackText" name="feedback" required placeholder="What did you love? What could we improve? Be specific. We read every word."></textarea>
           </div>
 
           <!-- Would you recommend -->
@@ -1165,7 +664,7 @@ button:focus-visible,
           <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
         <h3 class="why-feedback__title">Direct to Our Team</h3>
-        <p class="why-feedback__desc">Every submission is read by management — not buried in a public review platform.</p>
+        <p class="why-feedback__desc">Every submission is read by management, not buried in a public review platform.</p>
       </div>
       <div class="why-feedback__item reveal reveal-delay-2">
         <div class="why-feedback__icon">
@@ -1191,7 +690,7 @@ button:focus-visible,
     <div class="footer__grid">
       <div class="footer__brand">
         <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="footer__brand-logo">
-        <p>More than dim sum — it's a way of life. Handmade Cantonese dim sum served all day at Westfield Southcenter Mall.</p>
+        <p>More than dim sum, it's a way of life. Handmade Cantonese dim sum served all day at Westfield Southcenter Mall.</p>
       </div>
       <div>
         <h4>Navigate</h4>
@@ -1280,11 +779,11 @@ document.addEventListener('keydown', function(e) {
 
 // Star rating hints
 const ratingHints = {
-  1: 'Poor — we need to do better',
-  2: 'Fair — room for improvement',
-  3: 'Good — a solid experience',
-  4: 'Great — above expectations',
-  5: 'Exceptional — we nailed it'
+  1: 'Poor, we need to do better',
+  2: 'Fair, room for improvement',
+  3: 'Good, a solid experience',
+  4: 'Great, above expectations',
+  5: 'Exceptional, we nailed it'
 };
 
 document.querySelectorAll('#overallRating input').forEach(input => {
@@ -1306,7 +805,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e) {
 
   // Build email body
   const lines = [];
-  lines.push('=== MR. DIM SUM — CUSTOMER FEEDBACK ===');
+  lines.push('=== MR. DIM SUM | CUSTOMER FEEDBACK ===');
   lines.push('');
   if (data.overall) lines.push('Overall Rating: ' + '★'.repeat(data.overall) + '☆'.repeat(5 - data.overall) + ' (' + data.overall + '/5)');
   if (data.food) lines.push('Food Quality: ' + '★'.repeat(data.food) + '☆'.repeat(5 - data.food));

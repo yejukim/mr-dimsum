@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reservations — Mr. Dim Sum | Book a Table in Tukwila, WA</title>
+<title>Reservations | Mr. Dim Sum | Book a Table in Tukwila, WA</title>
 <meta name="description" content="Reserve a table at Mr. Dim Sum for parties of 8–16 guests. Walk-ins welcome for smaller groups. Private party inquiries available Monday–Thursday after 2 PM.">
-<meta property="og:title" content="Reservations — Mr. Dim Sum | Book a Table">
+<meta property="og:title" content="Reservations | Mr. Dim Sum | Book a Table">
 <meta property="og:description" content="Reserve a table at Mr. Dim Sum. Walk-ins welcome for parties of 8 or fewer. Reservations available for groups of 8-16 guests.">
 <meta property="og:image" content="pictures/MrDimSum_Photo_InteriorSeating_2025-05-21_v27.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Gowun+Batang:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italianno&family=Gowun+Batang:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,386 +49,11 @@
 }
 </script>
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --red: #C41E24;
-  --red-dark: #9E181D;
-  --gold: #d5b686;
-  --gold-dark: #b89b6a;
-  --gold-light: #F5E6C4;
-  --warm-bg: #FFFCF3;
-  --warm-bg-alt: #FFF8E8;
-  --charcoal: #1A1A1A;
-  --brown: #3D2B1F;
-  --brown-light: #5C4033;
-  --gray-700: #374151;
-  --gray-500: #6B7280;
-  --gray-300: #D1D5DB;
-  --gray-200: #E5E7EB;
-  --white: #FFFFFF;
-  --font-display: 'Italiana', serif;
-  --font-body: 'Gowun Batang', Georgia, serif;
-  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
-  --nav-height: 76px;
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-::selection {
-  background: var(--gold);
-  color: var(--brown);
-}
-::-moz-selection {
-  background: var(--gold);
-  color: var(--brown);
-}
-
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-
-body {
-  font-family: var(--font-body);
-  color: var(--charcoal);
-  background: var(--warm-bg);
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-img { max-width: 100%; height: auto; display: block; }
-a { text-decoration: none; color: inherit; }
-
-a:focus-visible,
-button:focus-visible,
-.btn:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-@keyframes navFadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* REVEAL ANIMATIONS */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.reveal-left.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.reveal-right.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* NAV */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255,252,243,0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(213,182,134,0.2);
-  animation: navFadeIn 0.8s ease both;
-}
-
-.nav__inner {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  height: var(--nav-height);
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.nav__links-left,
-.nav__links-right {
-  display: flex;
-  list-style: none;
-  gap: 32px;
-}
-.nav__links-left { justify-content: flex-end; }
-.nav__links-right { justify-content: flex-start; }
-
-.nav__links-left a,
-.nav__links-right a {
-  font-family: var(--font-ui);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--brown);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.3s, opacity 0.3s;
-  position: relative;
-  padding-bottom: 2px;
-}
-.nav__links-left a::after,
-.nav__links-right a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.4s var(--ease-out-expo);
-}
-.nav__links-left a:hover::after,
-.nav__links-right a:hover::after {
-  width: 100%;
-}
-.nav__links-left a:hover,
-.nav__links-right a:hover { opacity: 0.7; }
-
-/* Active nav link */
-.nav__links-left a.is-active,
-.nav__links-right a.is-active {
-  color: var(--brown);
-}
-.nav__links-left a.is-active::after,
-.nav__links-right a.is-active::after {
-  width: 100%;
-}
-
-.nav__logo {
-  justify-self: center;
-  padding: 0 28px;
-}
-.nav__logo-img {
-  height: 38px;
-  width: auto;
-}
-
-/* HAMBURGER */
-.nav__hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  justify-self: end;
-  min-width: 44px;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-  -webkit-tap-highlight-color: transparent;
-}
-.nav__hamburger-lines {
-  width: 22px;
-  height: 16px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.nav__hamburger-lines span {
-  display: block;
-  width: 100%;
-  height: 1.5px;
-  background: var(--brown);
-  border-radius: 2px;
-  transition: transform 0.4s var(--ease-out-expo), opacity 0.3s ease;
-  transform-origin: center;
-}
-.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(2) { opacity: 0; }
-.nav__hamburger.is-active .nav__hamburger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* MOBILE MENU */
-.nav__mobile-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(26,26,26,0.6);
-  z-index: 98;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.nav__mobile-overlay.is-open { display: block; opacity: 1; }
-
-.nav__mobile-menu {
-  position: fixed;
-  top: 0; right: 0; bottom: 0;
-  width: 320px;
-  max-width: 85vw;
-  background: var(--warm-bg);
-  z-index: 99;
-  padding: 100px 40px 40px;
-  transform: translateX(100%);
-  transition: transform 0.5s var(--ease-out-expo);
-  display: flex;
-  flex-direction: column;
-  box-shadow: -8px 0 40px rgba(0,0,0,0.15);
-  overflow-y: auto;
-}
-.nav__mobile-menu.is-open { transform: translateX(0); }
-.nav__mobile-menu a {
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
-  font-family: var(--font-ui);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--brown);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-bottom: 1px solid rgba(213,182,134,0.2);
-  transition: color 0.3s, padding-left 0.3s;
-  min-height: 44px;
-}
-.nav__mobile-menu a:hover, .nav__mobile-menu a:active {
-  color: var(--red);
-  padding-left: 12px;
-}
-.nav__mobile-menu a.is-active {
-  color: var(--red);
-}
-
-@media (max-width: 768px) {
-  .nav__inner {
-    grid-template-columns: 1fr auto auto;
-    height: 64px;
-  }
-  .nav__links-left, .nav__links-right { display: none; }
-  .nav__logo { justify-self: start; padding: 0; }
-  .nav__hamburger { display: flex; }
-  .nav__logo-img { height: 32px; }
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-ui);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  padding: 16px 40px;
-  border-radius: 0;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: all 0.4s var(--ease-out-expo);
-  min-height: 44px;
-  position: relative;
-}
-.btn:active { transform: scale(0.97); }
-
-.btn--gold {
-  background: var(--gold);
-  color: var(--brown);
-  font-weight: 700;
-}
-.btn--gold:hover {
-  background: var(--gold-dark);
-  box-shadow: 0 4px 20px rgba(213,182,134,0.35);
-  transform: translateY(-2px);
-}
-
-/* SECTION SHARED */
-.section { padding: 88px 0; }
-.section--alt { background: var(--warm-bg-alt); }
-
-.section__header {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 52px;
-}
-
-.section__label {
-  font-family: var(--font-ui);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold-dark);
-  margin-bottom: 12px;
-}
-
-.section__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  margin-bottom: 16px;
-  line-height: 1.2;
-  color: var(--brown);
-  letter-spacing: 0.02em;
-}
-
-.section__desc {
-  font-family: var(--font-body);
-  color: var(--gray-500);
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-/* DECORATIVE DIVIDER */
-.divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 0 auto 20px;
-  width: 120px;
-}
-.divider__line {
-  flex: 1;
-  height: 1px;
-  background: var(--gold);
-}
-.divider__diamond {
-  width: 8px;
-  height: 8px;
-  background: var(--gold);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-  animation: float 4s ease-in-out infinite;
-}
 
 /* HERO BANNER */
 .page-hero {
-  background: var(--brown);
-  padding: 80px 0 72px;
+  background: linear-gradient(rgba(26,18,12,0.5), rgba(26,18,12,0.5)), url('pictures/reservations-photo.jpg') center/cover no-repeat;
+  padding: 80px 0;
   text-align: center;
 }
 .page-hero .section__label {
@@ -440,7 +66,7 @@ button:focus-visible,
   background: var(--gold);
 }
 .page-hero__heading {
-  font-family: var(--font-display);
+  font-family: var(--font-display); font-weight: 400;
   font-size: clamp(2.25rem, 5vw, 3.5rem);
   color: var(--white);
   line-height: 1.15;
@@ -452,35 +78,17 @@ button:focus-visible,
   font-family: var(--font-body);
   font-size: 1.05rem;
   color: rgba(255,255,255,0.8);
-  line-height: 1.8;
+  line-height: 1.2;
   animation: fadeUp 1s ease 0.2s both;
 }
 
-/* BOOK A TABLE — reservation card */
-.reservation-card {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  background: var(--warm-bg);
-  border-radius: 8px;
-  padding: 56px 48px;
-  border: 1px solid rgba(213,182,134,0.3);
-}
-.reservation-card p {
-  font-family: var(--font-body);
-  color: var(--brown-light);
-  line-height: 1.9;
-  margin-bottom: 16px;
-  font-size: 1rem;
-}
-.reservation-card p:last-of-type {
-  margin-bottom: 32px;
-}
-.reservation-card .btn {
-  margin-top: 4px;
+
+/* INFO CARDS — 3 columns, matched to the home page cards */
+/* Fade from the previous section's background (white) into this section's cream */
+.info-section {
+  background: linear-gradient(180deg, var(--warm-bg) 0%, var(--warm-bg-alt) 100%);
 }
 
-/* INFO CARDS — 3 columns */
 .info-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -489,36 +97,17 @@ button:focus-visible,
 }
 
 .info-card {
-  background: var(--warm-bg);
-  border: 1px solid rgba(213,182,134,0.25);
+  background: var(--white);
   border-radius: 12px;
-  padding: 40px 28px 36px;
+  padding: 32px 24px;
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-}
-
-.info-card__icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 20px;
-}
-.info-card__icon svg {
-  width: 48px;
-  height: 48px;
-  fill: none;
-  stroke: var(--gold);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  border: 1px solid rgba(213,182,134,0.35);
+  box-shadow: 0 10px 30px rgba(61,43,31,0.07);
 }
 
 .info-card__title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 2.5rem;
   color: var(--brown);
   margin-bottom: 12px;
   letter-spacing: 0.02em;
@@ -528,12 +117,11 @@ button:focus-visible,
   font-family: var(--font-body);
   font-size: 0.9375rem;
   color: var(--brown-light);
-  line-height: 1.8;
+  line-height: 1.2;
 }
 
 @media (max-width: 768px) {
   .info-cards { grid-template-columns: 1fr; gap: 16px; }
-  .info-card { padding: 32px 24px 28px; }
 }
 
 /* SPECIAL EVENTS — dark section */
@@ -560,7 +148,7 @@ button:focus-visible,
   font-family: var(--font-body);
   color: rgba(255,255,255,0.8);
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.2;
   margin-bottom: 16px;
 }
 
@@ -599,9 +187,10 @@ button:focus-visible,
 .inquiry-form__textarea {
   font-family: var(--font-body);
   font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
   background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(213,182,134,0.25);
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 14px 16px;
   color: var(--white);
   transition: border-color 0.3s ease, background 0.3s ease;
@@ -652,215 +241,102 @@ button:focus-visible,
   .inquiry-form__group--full { grid-column: auto; }
 }
 
-/* VISIT / HOURS MINI SECTION */
-.visit-grid {
+/* VISIT — matches the home page */
+.visit-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 44px;
-  align-items: start;
+  gap: 24px;
+  margin-bottom: 48px;
 }
-
-.visit-info h3 {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  color: var(--brown);
-  margin-bottom: 12px;
-  margin-top: 28px;
-  letter-spacing: 0.02em;
+.visit-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.1);
 }
-.visit-info h3:first-child { margin-top: 0; }
-
-.visit-info p, .visit-info address {
-  font-family: var(--font-body);
-  font-style: normal;
-  color: var(--brown-light);
-  line-height: 1.9;
-  font-size: 1rem;
+.visit-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease-out-expo);
 }
-
-.visit-info a { color: var(--red); transition: color 0.2s; }
-.visit-info a:hover { text-decoration: underline; color: var(--red-dark); }
-
-.hours-table { width: 100%; }
-.hours-table td {
-  padding: 6px 0;
-  font-family: var(--font-body);
-  color: var(--brown-light);
-  font-size: 1rem;
-}
-.hours-table td:last-child { text-align: right; font-weight: 700; }
+.visit-photo:hover img { transform: scale(1.03); }
 
 .visit-map {
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  aspect-ratio: 4/3;
   background: var(--gray-200);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.1);
 }
-.visit-map iframe { width: 100%; height: 100%; border: 0; }
-
-@media (max-width: 768px) {
-  .visit-grid { grid-template-columns: 1fr; }
-  .visit-map { aspect-ratio: 16/9; }
-}
-
-/* FOOTER */
-.footer {
-  background: var(--charcoal);
-  color: rgba(255,255,255,0.7);
-  padding: 64px 0 32px;
-}
-
-.footer__grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 56px;
-}
-
-.footer__brand-logo {
-  height: 32px;
-  width: auto;
-  margin-bottom: 20px;
-  opacity: 0.9;
-  filter: brightness(0) invert(1);
-}
-.footer__brand p {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.55);
-  max-width: 280px;
-}
-
-.footer h4 {
-  color: var(--white);
-  font-family: var(--font-ui);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.footer ul { list-style: none; }
-.footer li { margin-bottom: 12px; }
-.footer a {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.5);
-  transition: color 0.3s;
-  position: relative;
-}
-.footer a:hover { color: var(--white); }
-
-.footer__grid a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.3s ease;
-}
-.footer__grid a:hover::after {
+.visit-map iframe {
   width: 100%;
+  height: 100%;
+  border: 0;
+  min-height: 300px;
 }
 
-.footer address {
+.visit-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.visit-card {
+  border-radius: 12px;
+  background: var(--white);
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  border: 1px solid rgba(213,182,134,0.35);
+  box-shadow: 0 10px 30px rgba(61,43,31,0.07);
+  transition-property: opacity, transform, box-shadow, border-color;
+  transition-duration: 0.8s;
+  transition-timing-function: var(--ease-out-expo);
+}
+.visit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(61,43,31,0.13);
+  border-color: rgba(213,182,134,0.55);
+  transition-duration: 0.4s;
+  transition-delay: 0s;
+}
+.visit-card h3 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 2.5rem;
+  color: var(--brown);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+.visit-card p, .visit-card address {
   font-family: var(--font-body);
   font-style: normal;
+  color: var(--brown-light);
+  line-height: 1.2;
   font-size: 0.9375rem;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.5);
 }
-
-.footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.35);
+.visit-card a {
+  color: #672016;
+  transition: color 0.3s;
+  font-weight: 600;
 }
-
-.footer__socials { display: flex; gap: 16px; }
-.footer__socials a {
-  display: flex;
-  padding: 4px;
-  min-width: 44px;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-.footer__socials a:hover { transform: translateY(-2px); }
-.footer__socials a::after { display: none; }
-.footer__socials svg { width: 20px; height: 20px; fill: rgba(255,255,255,0.5); transition: fill 0.2s; }
-.footer__socials a:hover svg { fill: var(--white); }
+.visit-card a:hover { color: var(--red-dark); text-decoration: underline; }
 
 @media (max-width: 768px) {
-  .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .footer__bottom { flex-direction: column; text-align: center; }
-  .footer__socials { justify-content: center; }
+  .visit-top { grid-template-columns: 1fr; }
+  .visit-cards { grid-template-columns: 1fr 1fr; }
+  .visit-map iframe { min-height: 240px; }
 }
 @media (max-width: 480px) {
-  .footer__grid { grid-template-columns: 1fr; gap: 28px; }
+  .visit-cards { grid-template-columns: 1fr; }
 }
 
-/* BACK TO TOP BUTTON */
-.back-to-top {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 90;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: var(--brown);
-  color: var(--white);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px);
-  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease, background 0.2s;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  -webkit-tap-highlight-color: transparent;
-  padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-.back-to-top.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.back-to-top:hover {
-  background: var(--red);
-}
-.back-to-top svg {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
   .events-section { padding: 64px 0; }
   .page-hero { padding: 60px 0 52px; }
-  .reservation-card { padding: 40px 24px; }
   .section__header { margin-bottom: 40px; }
-  .section__title { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+  .section__title { font-size: clamp(2.25rem, 7vw, 3.25rem); }
   .section__desc { font-size: 1rem; }
   .back-to-top {
     bottom: calc(20px + env(safe-area-inset-bottom, 0px));
@@ -868,15 +344,6 @@ button:focus-visible,
   }
 }
 
-/* UTILITY */
-.sr-only {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
-}
 </style>
 </head>
 
@@ -890,7 +357,7 @@ button:focus-visible,
       <li><a href="menu.html">Menu</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
-    <a href="index.html" class="nav__logo" aria-label="Mr. Dim Sum — Home">
+    <a href="index.html" class="nav__logo" aria-label="Mr. Dim Sum, Home">
       <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="nav__logo-img">
     </a>
     <ul class="nav__links-right">
@@ -929,56 +396,30 @@ button:focus-visible,
 <section class="section" id="book">
   <div class="container">
     <div class="section__header reveal">
-      <p class="section__label">Book a Table</p>
+      <p class="section__label">Reservations</p>
       <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
-      <h2 class="section__title">Reserve your seats</h2>
+      <h2 class="section__title">Save your seats</h2>
+      <p class="section__desc">Parties of 8 or fewer? Just walk in, no reservation needed. For groups of 8–16, reserve ahead so we can have your table ready.</p>
     </div>
-    <div class="reservation-card reveal">
-      <p>We welcome walk-ins for parties of 8 guests or fewer.</p>
-      <p>Reservations are available for parties of 8 to 16 guests, and all children must be included in the party count. If you require a highchair or space for a stroller, please let us know when booking.</p>
-      <p>To ensure the best experience, please arrive on time with your entire party; we can hold tables for up to 15 minutes past the reserved time before they may be released.</p>
-      <a href="https://www.yelp.com/reservations/mr-dim-sum-tukwila-3" target="_blank" rel="noopener" class="btn btn--gold">Reserve Now</a>
+    <div class="reveal" style="text-align:center;">
+      <a href="https://www.yelp.com/reservations/mr-dim-sum-tukwila-3" target="_blank" rel="noopener" class="btn btn--gold">Reserve</a>
     </div>
   </div>
 </section>
 
 <!-- QUICK INFO CARDS -->
-<section class="section section--alt">
+<section class="section section--alt info-section">
   <div class="container">
     <div class="info-cards">
       <div class="info-card reveal reveal-delay-1">
-        <div class="info-card__icon">
-          <svg viewBox="0 0 48 48">
-            <path d="M20 8v32M20 8c0 0-6 4-6 12s6 12 6 12" />
-            <path d="M28 18h-8" />
-            <rect x="14" y="38" width="12" height="2" rx="1" />
-            <path d="M32 14l4-4M36 14l-4-4M34 14v10c0 3-2 5-5 5" />
-          </svg>
-        </div>
         <h3 class="info-card__title">Walk-ins Welcome</h3>
         <p class="info-card__desc">Parties of 8 or fewer, no reservation needed. We seat 151 guests and tables turn fast.</p>
       </div>
       <div class="info-card reveal reveal-delay-2">
-        <div class="info-card__icon">
-          <svg viewBox="0 0 48 48">
-            <circle cx="16" cy="16" r="5" />
-            <circle cx="32" cy="16" r="5" />
-            <path d="M8 36c0-5 4-9 8-9 2 0 4 0.8 5.5 2.2" />
-            <path d="M40 36c0-5-4-9-8-9-2 0-4 0.8-5.5 2.2" />
-            <circle cx="24" cy="22" r="5" />
-            <path d="M14 42c0-5 4.5-9 10-9s10 4 10 9" />
-          </svg>
-        </div>
         <h3 class="info-card__title">Large Parties</h3>
         <p class="info-card__desc">Groups of 8&ndash;16 guests can reserve ahead so we have your table ready.</p>
       </div>
       <div class="info-card reveal reveal-delay-3">
-        <div class="info-card__icon">
-          <svg viewBox="0 0 48 48">
-            <circle cx="24" cy="24" r="16" />
-            <polyline points="24,14 24,24 32,28" />
-          </svg>
-        </div>
         <h3 class="info-card__title">Arrive on Time</h3>
         <p class="info-card__desc">We hold reserved tables for 15 minutes. Please arrive with your full party.</p>
       </div>
@@ -1035,7 +476,7 @@ button:focus-visible,
       <div class="inquiry-form__row">
         <div class="inquiry-form__group inquiry-form__group--full">
           <label class="inquiry-form__label" for="inquiry-details">Event Details</label>
-          <textarea class="inquiry-form__textarea" id="inquiry-details" name="details" placeholder="Tell us about your event — occasion, dietary needs, special requests..." rows="5"></textarea>
+          <textarea class="inquiry-form__textarea" id="inquiry-details" name="details" placeholder="Tell us about your event: occasion, dietary needs, special requests..." rows="5"></textarea>
         </div>
       </div>
       <div class="inquiry-form__submit">
@@ -1053,27 +494,11 @@ button:focus-visible,
       <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
       <h2 class="section__title">Find us at Southcenter Mall</h2>
     </div>
-    <div class="visit-grid">
-      <div class="visit-info reveal-left">
-        <img src="pictures/dimsumpshoped.png" alt="Mr. Dim Sum storefront at Westfield Southcenter Mall" loading="lazy" style="border-radius:8px;margin-bottom:24px;width:100%;">
-        <h3>Hours</h3>
-        <table class="hours-table">
-          <tr><td>Monday &ndash; Saturday</td><td>10:00 AM &ndash; 9:00 PM</td></tr>
-          <tr><td>Sunday</td><td>10:00 AM &ndash; 8:00 PM</td></tr>
-        </table>
-
-        <h3>Address</h3>
-        <address>
-          973 Southcenter Mall<br>
-          Tukwila, WA 98188
-        </address>
-        <p style="margin-top:8px"><a href="https://maps.google.com/?q=973+Southcenter+Mall+Tukwila+WA+98188" target="_blank" rel="noopener">Get directions &rarr;</a></p>
-
-        <h3>Contact</h3>
-        <p><a href="mailto:info@mrdimsumusa.com">info@mrdimsumusa.com</a></p>
-        <p><a href="https://instagram.com/mrdimsumusa" target="_blank" rel="noopener">@mrdimsumusa on Instagram</a></p>
+    <div class="visit-top reveal">
+      <div class="visit-photo">
+        <img src="pictures/visit-us-photo-1.jpg" alt="The Mr. Dim Sum storefront at Westfield Southcenter Mall" loading="lazy">
       </div>
-      <div class="visit-map reveal-right">
+      <div class="visit-map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.5!2d-122.2561!3d47.4595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDI3JzM0LjIiTiAxMjLCsDE1JzIxLjgiVw!5e0!3m2!1sen!2sus!4v1"
           allowfullscreen=""
@@ -1081,6 +506,25 @@ button:focus-visible,
           referrerpolicy="no-referrer-when-downgrade"
           title="Map showing Mr. Dim Sum location at Westfield Southcenter Mall, Tukwila WA">
         </iframe>
+      </div>
+    </div>
+    <div class="visit-cards">
+      <div class="visit-card reveal reveal-delay-1">
+        <h3>Location</h3>
+        <address>973 Southcenter Mall<br>Tukwila, WA 98188</address>
+        <p style="margin-top:10px"><a href="https://maps.google.com/?q=973+Southcenter+Mall+Tukwila+WA+98188" target="_blank" rel="noopener">Get directions &rarr;</a></p>
+      </div>
+      <div class="visit-card reveal reveal-delay-2">
+        <h3>Hours</h3>
+        <p>Mon&ndash;Sat: 10am&ndash;9pm<br>Sunday: 10am&ndash;8pm</p>
+      </div>
+      <div class="visit-card reveal reveal-delay-3">
+        <h3>Parking</h3>
+        <p>Free parking throughout Westfield Southcenter Mall</p>
+      </div>
+      <div class="visit-card reveal reveal-delay-4">
+        <h3>Contact</h3>
+        <p><a href="mailto:info@mrdimsumusa.com">info@mrdimsumusa.com</a><br><a href="https://instagram.com/mrdimsumusa" target="_blank" rel="noopener">@mrdimsumusa</a></p>
       </div>
     </div>
   </div>
@@ -1092,7 +536,7 @@ button:focus-visible,
     <div class="footer__grid">
       <div class="footer__brand">
         <img src="pictures/mrdimsum-logo.png" alt="Mr. Dim Sum" class="footer__brand-logo">
-        <p>More than dim sum — it's a way of life. Handmade Cantonese dim sum served all day at Westfield Southcenter Mall.</p>
+        <p>More than dim sum, it's a way of life. Handmade Cantonese dim sum served all day at Westfield Southcenter Mall.</p>
       </div>
       <div>
         <h4>Navigate</h4>
