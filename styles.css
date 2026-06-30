@@ -277,7 +277,7 @@ button:focus-visible,
   .nav__links-left, .nav__links-right { display: none; }
   .nav__logo { justify-self: start; padding: 0; }
   .nav__hamburger { display: flex; }
-  .nav__logo-img { height: 32px; }
+  .nav__logo-img { height: 28px; }
 }
 
 /* BTN */
@@ -466,6 +466,15 @@ button:focus-visible,
 .footer__socials a:hover svg { fill: var(--white); }
 
 @media (max-width: 768px) {
+  /* Mobile typography (placed after base rules so it wins the cascade) */
+  body { font-size: 14px; }
+  .section__label { font-size: 10px; }
+  .section__desc { font-size: 14px; }
+  .section__title { font-size: 2.5rem; }
+
+  /* Wider side gutter */
+  .container { padding-left: 32px; padding-right: 32px; }
+
   .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer__bottom { flex-direction: column; text-align: center; }
   .footer__socials { justify-content: center; }

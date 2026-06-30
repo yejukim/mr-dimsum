@@ -116,6 +116,7 @@
 
 .story__text .section__label {
   color: var(--gold-dark);
+  font-size: 0.6875rem;
 }
 
 .story__text h2 {
@@ -135,7 +136,7 @@
   font-size: 1rem;
 }
 
-.story__tagline {
+.story__text p.story__tagline {
   font-family: var(--font-display); font-weight: 400;
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   color: var(--gold-dark);
@@ -145,10 +146,13 @@
   line-height: 1.1;
 }
 
+.story__tagline-break { display: none; }
+
 @media (max-width: 768px) {
   .story { grid-template-columns: 1fr; }
   .story__img { min-height: 280px; }
   .story__text { padding: 36px 24px; }
+  .story__tagline-break { display: inline; }
 }
 
 /* CULTURE — photo background, two columns */
@@ -244,11 +248,20 @@
   .section { padding: 64px 0; }
   .about-hero { padding: 60px 0; }
   .about-hero h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: 2.5rem;
   }
   .about-hero__sub {
-    font-size: 1.05rem;
+    font-size: 14px;
   }
+  .story__text .section__label { font-size: 10px; }
+  /* Match the Our Story body to the smaller Culture/stat body size (tagline + label excluded) */
+  .story__text p:not(.section__label):not(.story__tagline) { font-size: 0.95rem; }
+  /* Match the story heading to the home-page header size */
+  .story__text h2 { font-size: 2.5rem; }
+  /* Match Culture body to the smaller stat (guests/dishes) text */
+  .culture__desc { font-size: 0.95rem; }
+  /* Slightly larger stat numbers */
+  .stat__number { font-size: 4.5rem; }
   .section__header {
     margin-bottom: 40px;
   }
@@ -323,7 +336,7 @@
         <h2>Authentic Flavors</h2>
         <p>Mr. Dim Sum was born from a passion for sharing authentic Cantonese flavors in a modern way. Our founders, with roots in both traditional dim sum kitchens and fast-paced restaurant operations, saw an opportunity to bring handcrafted dim sum to a new generation of diners, without compromising quality or culture.</p>
         <p>At our core, we value authenticity, efficiency, and community. We're proud to be part of the diverse food scene at Southcenter Mall and strive to provide a welcoming, satisfying experience to everyone who walks through our doors.</p>
-        <p class="story__tagline">Touch the Heart With Every Bite.</p>
+        <p class="story__tagline">Touch the Heart<br class="story__tagline-break">With Every Bite.</p>
       </div>
     </div>
   </div>

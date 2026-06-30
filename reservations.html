@@ -334,10 +334,37 @@
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
   .events-section { padding: 64px 0; }
-  .page-hero { padding: 60px 0 52px; }
+  /* Darker hero overlay for readability */
+  .page-hero {
+    padding: 60px 0 52px;
+    background: linear-gradient(rgba(26,18,12,0.65), rgba(26,18,12,0.65)), url('pictures/reservations-photo.jpg') center/cover no-repeat;
+  }
+  .page-hero__heading { font-size: 2.5rem; }
+  .page-hero__sub { font-size: 14px; }
   .section__header { margin-bottom: 40px; }
-  .section__title { font-size: clamp(2.25rem, 7vw, 3.25rem); }
-  .section__desc { font-size: 1rem; }
+  .section__title { font-size: 2.5rem; }
+  /* Section body: warm body color (not grey), 14px */
+  .section__desc { font-size: 0.875rem; color: var(--brown-light); }
+  .events__content p { font-size: 14px; }
+  /* More breathing room above the Reserve button + match home button length */
+  .reserve-cta { margin-top: 24px; }
+  .reserve-cta .btn { width: 240px; justify-content: center; }
+
+  /* Info + Visit cards → de-carded hairline info list (matches home) */
+  .info-cards, .visit-cards { grid-template-columns: 1fr; gap: 0; }
+  .info-card, .visit-card {
+    background: transparent; border: none; border-radius: 0; box-shadow: none;
+    border-bottom: 1px solid rgba(213,182,134,0.35);
+    padding: 16px 2px; text-align: left;
+  }
+  .info-card:last-child, .visit-card:last-child { border-bottom: none; }
+  .visit-card:hover { transform: none; box-shadow: none; }
+  .info-card__title, .visit-card h3 {
+    font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark);
+    margin-bottom: 6px;
+  }
+  .info-card__desc, .visit-card p, .visit-card address { font-size: 14px; }
   .back-to-top {
     bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     right: 20px;
@@ -401,7 +428,7 @@
       <h2 class="section__title">Save your seats</h2>
       <p class="section__desc">Parties of 8 or fewer? Just walk in, no reservation needed. For groups of 8–16, reserve ahead so we can have your table ready.</p>
     </div>
-    <div class="reveal" style="text-align:center;">
+    <div class="reveal reserve-cta" style="text-align:center;">
       <a href="https://www.yelp.com/reservations/mr-dim-sum-tukwila-3" target="_blank" rel="noopener" class="btn btn--gold">Reserve</a>
     </div>
   </div>
@@ -492,7 +519,7 @@
     <div class="section__header reveal">
       <p class="section__label">Visit us</p>
       <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
-      <h2 class="section__title">Find us at Southcenter Mall</h2>
+      <h2 class="section__title">Find us at<br>Southcenter Mall</h2>
     </div>
     <div class="visit-top reveal">
       <div class="visit-photo">

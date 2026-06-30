@@ -314,13 +314,44 @@
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
+  .hero-banner h1 { font-size: 2.5rem; }
+  .hero-banner__sub { font-size: 14px; }
   .section__header { margin-bottom: 40px; }
-  .section__title { font-size: clamp(2.25rem, 7vw, 3.25rem); }
-  .quick-info { grid-template-columns: 1fr 1fr; margin-top: -32px; }
+  .section__title { font-size: 2.5rem; }
+  /* Reorder (mobile only): form section first, info bar below it */
+  body { display: flex; flex-direction: column; }
+  .nav { order: 1; }
+  .hero-banner { order: 2; }
+  #contact { order: 3; }
+  body > .container { order: 4; }
+  #faq { order: 5; }
+  .footer { order: 6; }
+
+  /* Quick info → de-carded hairline list (matches home), icons removed */
+  .quick-info {
+    display: block;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 0;
+    overflow: visible;
+  }
+  .quick-info__item {
+    padding: 16px 2px;
+    text-align: left;
+    border-bottom: 1px solid rgba(213,182,134,0.35);
+  }
+  .quick-info__item:last-child { border-bottom: none; }
+  .quick-info__item:hover { background: transparent; }
+  .quick-info__icon { display: none; }
+  .quick-info__value { font-size: 14px; }
+
+  /* Form + map: stack with breathing room between */
   .contact-layout { grid-template-columns: 1fr; }
   .contact-layout .contact-form-card,
   .contact-layout .contact-map,
   .contact-layout .contact-map__caption { grid-column: 1; grid-row: auto; }
+  .contact-form-card { margin-bottom: 28px; }
   .contact-map iframe { min-height: 300px; }
   .hero-banner { padding: 60px 20px 80px; }
   .back-to-top {
@@ -330,7 +361,6 @@
 }
 
 @media (max-width: 480px) {
-  .quick-info { grid-template-columns: 1fr; border-radius: 12px; }
   .contact-form-card { padding: 24px 20px; }
 }
 

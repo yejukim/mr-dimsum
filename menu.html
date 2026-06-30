@@ -736,7 +736,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 .mobile-cat-bar {
   display: none;
   position: sticky;
-  top: calc(var(--nav-height) + 48px);
+  top: calc(var(--nav-height) + 78px);
   z-index: 80;
   border-bottom: var(--hairline);
   background: rgba(255,252,243,0.97);
@@ -842,7 +842,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   border-radius: 12px 12px 0 0;
   max-height: 65vh;
   overflow-y: auto;
-  padding: 20px 0;
+  padding: 0 0 20px;
   box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
   animation: slideUp 0.3s ease;
 }
@@ -856,13 +856,17 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px 16px;
+  padding: 18px 20px 14px;
   border-bottom: var(--hairline);
   margin-bottom: 8px;
+  position: sticky;
+  top: 0;
+  background: var(--warm-bg);
+  z-index: 2;
 }
 .mobile-cat-dropdown__header h3 {
   font-family: var(--font-display); font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   color: var(--brown);
 }
 .mobile-cat-dropdown__close {
@@ -1031,15 +1035,17 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .nav__logo-img { height: 32px; }
 
   .menu-hero { padding: 48px 16px; }
+  .menu-hero h1 { font-size: 2.5rem; }
+  .menu-hero__sub { font-size: 14px; }
+
+  /* Mobile typography */
+  body { font-size: 14px; }
 
   .legend-bar__inner {
-    gap: 12px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    gap: 10px 16px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  .legend-bar__inner::-webkit-scrollbar { display: none; }
 
   /* Switch to single column — hide sidebar, show mobile bar */
   .menu-layout {
@@ -1052,13 +1058,16 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
     padding: 0 16px 80px 16px;
   }
 
-  .menu-category__header h2 { font-size: 2.125rem; }
+  .menu-category__header h2 { font-size: 2.375rem; }
   .menu-items-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .menu-item__name { font-size: 0.875rem; }
   .menu-item__price { font-size: 0.8125rem; }
   .menu-item__info { padding: 12px 14px 14px; }
   .menu-cta { padding: 48px 16px 64px; }
   .reservation-box { padding: 40px 24px; }
+  /* CTA card body/label to match home (override the .reservation-box p quirk) */
+  .reservation-box p { font-size: 14px; }
+  .reservation-box .reservation-box__label { font-size: 10px; }
 
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .footer__bottom { flex-direction: column; text-align: center; }
@@ -1083,38 +1092,19 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   .menu-item__info { padding: 7px 2px 0; gap: 1px; }
   .menu-item__name {
     font-size: 0.85rem; line-height: 1.2;
-    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
   }
   .menu-item__desc { display: none; }
-  .menu-item__price { font-size: 0.8rem; margin-top: auto; }
+  .menu-item__price { font-size: 10.8px; margin-top: auto; }
 
   /* Dietary badges lifted onto the photo corner so the name clamps cleanly */
   .menu-items-grid:not(.is-beverage) .menu-item { position: relative; }
-  .menu-items-grid:not(.is-beverage) .menu-item:not(.is-hero) .menu-item__tags {
+  .menu-items-grid:not(.is-beverage) .menu-item__tags {
     position: absolute; top: 8px; left: 8px; margin: 0; z-index: 2;
   }
-  .menu-items-grid:not(.is-beverage) .menu-item:not(.is-hero) .tag {
+  .menu-items-grid:not(.is-beverage) .tag {
     box-shadow: 0 0 0 1.5px rgba(255, 252, 243, 0.6);
   }
 
-  /* Signature banner — first photographed dish of each category spans both columns */
-  .menu-item.is-hero { grid-column: 1 / -1; position: relative; }
-  .menu-item.is-hero .menu-item__photo { aspect-ratio: 16 / 9; border-radius: 12px; }
-  .menu-item.is-hero .menu-item__photo::after {
-    content: 'Signature'; position: absolute; top: 10px; left: 10px;
-    background: var(--gold); color: var(--brown);
-    font-family: var(--font-ui); font-size: 0.58rem; font-weight: 700;
-    letter-spacing: 0.13em; text-transform: uppercase; padding: 4px 9px; border-radius: 12px;
-  }
-  .menu-item.is-hero .menu-item__info {
-    position: absolute; left: 0; right: 0; bottom: 0;
-    flex-direction: row; align-items: flex-end; justify-content: space-between;
-    gap: 10px; padding: 12px 14px; background: rgba(36, 25, 14, 0.6);
-  }
-  .menu-item.is-hero .menu-item__name {
-    font-family: var(--font-display); font-weight: 400; font-size: 1.05rem; color: #fff; -webkit-line-clamp: 2;
-  }
-  .menu-item.is-hero .menu-item__price { color: #fff; font-size: 0.85rem; margin-top: 0; }
 
   /* Beverage page — fully photoless categories become dotted-leader rows */
   .menu-items-grid.is-beverage { display: block; }
@@ -1928,19 +1918,11 @@ window.addEventListener('scroll', function() {
   }
 }, { passive: true });
 
-// Mobile menu: signature banner per category + beverage-row treatment for photoless categories
+// Mobile menu: beverage-row treatment for photoless categories
 (function() {
   document.querySelectorAll('.menu-items-grid').forEach(function(grid) {
     if (!grid.querySelector('.menu-item__photo img')) {
       grid.classList.add('is-beverage');
-      return;
-    }
-    var items = grid.querySelectorAll('.menu-item');
-    for (var i = 0; i < items.length; i++) {
-      if (items[i].querySelector('.menu-item__photo img')) {
-        items[i].classList.add('is-hero');
-        break;
-      }
     }
   });
 })();

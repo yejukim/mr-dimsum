@@ -291,6 +291,8 @@ body::after {
 .nav__hamburger.is-active .nav__hamburger-lines span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav__hamburger.is-active .nav__hamburger-lines span:nth-child(2) { opacity: 0; }
 .nav__hamburger.is-active .nav__hamburger-lines span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* When the menu is open the X sits on the light menu panel — keep it dark so it stays visible */
+.nav__hamburger.is-active .nav__hamburger-lines span { background: var(--brown); }
 
 /* MOBILE MENU */
 .nav__mobile-overlay {
@@ -347,7 +349,7 @@ body::after {
   .nav__links-left, .nav__links-right { display: none; }
   .nav__logo { justify-self: start; padding: 0; }
   .nav__hamburger { display: flex; }
-  .nav__logo-img { height: 32px; }
+  .nav__logo-img { height: 28px; }
 }
 
 /* ============================================
@@ -1098,15 +1100,59 @@ body::after {
    ============================================ */
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
-  .hero { min-height: 85vh; }
+  .container { padding-left: 32px; padding-right: 32px; }
+  .hero { min-height: 100vh; }
   .hero__bg { animation: none; }
   .hero__content { padding: 60px 20px; }
-  .hero__title { font-size: clamp(2.75rem, 10vw, 4.25rem); }
-  .hero__sub { font-size: 1.05rem; }
+  .hero__title { font-size: 3.75rem; }
+  .hero__sub { font-size: 14px; }
+  /* Stack hero / menu CTAs, equal width, centered label */
+  .hero__ctas, .menu-full-link {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero__ctas .btn, .menu-full-link .btn { justify-content: center; }
+
+  /* Visit Us: de-card into a clean hairline-divided info list */
+  .visit-cards {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .visit-card {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(213,182,134,0.35);
+    padding: 16px 2px;
+    text-align: left;
+  }
+  .visit-card:last-child { border-bottom: none; }
+  .visit-card:hover { transform: none; box-shadow: none; }
+  .visit-card h3 {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 6px;
+  }
+  .visit-card p, .visit-card address { font-size: 14px; }
   .reservation-box { padding: 40px 24px;
   background: var(--warm-bg-alt);}
+  .reservation-box p { font-size: 14px; }
+  .reservation-box .section__label { font-size: 10px; }
   .section__header { margin-bottom: 40px; }
-  .section__title { font-size: clamp(2.25rem, 7vw, 3.25rem); }
+  .section__title { font-size: 2.5rem; }
+
+  /* Mobile typography */
+  body { font-size: 14px; }
+  .section__label { font-size: 10px; }
+  .section__desc { font-size: 14px; }
   .back-to-top {
     bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     right: 20px;
@@ -1157,7 +1203,7 @@ body::after {
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <span class="hero__badge">📍 Westfield Southcenter Mall (Tukwila, WA)</span>
-    <h1 class="hero__title">Freshly <span class="steam-word">steamed<span class="steam-particles" aria-hidden="true"><span class="steam-p"></span><span class="steam-p"></span><span class="steam-p"></span><span class="steam-p"></span><span class="steam-p"></span><span class="steam-p"></span></span></span>, always shared</h1>
+    <h1 class="hero__title">Freshly <span class="steam-word">steamed<span class="steam-particles" aria-hidden="true"><span class="steam-p"></span><span class="steam-p"></span><span class="steam-p"></span><span class="steam-p"></span><span class="steam-p"></span><span class="steam-p"></span></span></span>,<br>always shared</h1>
     <div class="hero__line">
       <span></span>
       <div class="hero__line-diamond"></div>
@@ -1221,7 +1267,7 @@ body::after {
     <div class="section__header reveal">
       <p class="section__label">Visit us</p>
       <div class="divider"><span class="divider__line"></span><span class="divider__diamond"></span><span class="divider__line"></span></div>
-      <h2 class="section__title">Find us at Southcenter Mall</h2>
+      <h2 class="section__title">Find us at<br>Southcenter Mall</h2>
     </div>
     <div class="visit-top reveal">
       <div class="visit-photo">
